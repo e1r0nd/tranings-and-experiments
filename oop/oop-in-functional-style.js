@@ -1,5 +1,5 @@
 // the coffe machine's Constructor
-function CoffeMachine(power) {
+function CoffeeMachine(power) {
   // the deviding private and public is ENCAPSULATION
 
   // PUBLIC properties and methods
@@ -7,13 +7,19 @@ function CoffeMachine(power) {
   this.waterAmmount = 0; // watter ammount
   this.run = function() {
     // setTimeout will run onReady() after getBoilTime() ms
-    setTimeout(_onReady, _getBoilTime());
+    timerId = setTimeout(_onReady, _getBoilTime());
+    console.log('A coffe machine is started');
+  }
+  this.stop = function() {
+    clearTimeout(timerId);
+    console.log('A coffe machine is stoped!');
   }
   console.log('A coffee machine ('+ power +'W) is created');
 
   // PRIVATE properties and methods
   var WATER_HEAT_CAPACITY = 4200;
   var DELTA_TEMP = 80;
+  var timerId; // is used for stoping
   var self = this;
 
   // calculate the boil time
@@ -28,7 +34,7 @@ function CoffeMachine(power) {
     //   return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
     // }.bind(this); <<<
     // 3) cache this
-    // function CoffeMachine(power) {
+    // function CoffeeMachine(power) {
     //   var self = this; <<<
     //   function getBoilTime() {
     //     return self.waterAmount * WATER_HEAT_CAPACITY * 80 / power; <<<
@@ -45,8 +51,9 @@ function CoffeMachine(power) {
 }
 
 // create a coffe machine
-var coffeMachine = new CoffeMachine(100);
+var coffeeMachine = new CoffeeMachine(100);
 // pour water
-coffeMachine.waterAmmount = 200;
+coffeeMachine.waterAmmount = 200;
 // start boiling
-coffeMachine.run();
+coffeeMachine.run();
+coffeeMachine.stop();
