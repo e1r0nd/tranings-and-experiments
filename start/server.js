@@ -1,6 +1,20 @@
-var user_import = require ('./user');
+var log = require('logger')(module);
+var db = require('db');
+db.connect();
 
-var petya = new user_import.user_export('Петя');
-var vasya = new user_import.user_export('Вася');
+var User = require ('user');
 
-petya.hello(vasya);
+function run() {
+  var petya = new User('Петя');
+  var vasya = new User('Вася');
+
+  petya.hello(vasya);
+
+  log(db.getPhrase('Run successful'));
+}
+
+if (module.parent) {
+  exports.run = run;
+} else {
+  run();
+}
