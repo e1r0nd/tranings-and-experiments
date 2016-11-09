@@ -4,8 +4,13 @@
   "description": "es6 experiment",
   "main": "index.js",
   "engines": {
-    "node": ">=4.4.0"
+    "node": ">=6.5.0"
   },
+  "keyword": [
+    "babel",
+    "grunt",
+    "es6"
+  ],
   "scripts": {
     "prestart": "npm install",
     "start": "http-server app/ -a 0.0.0.0 -p 8000",
