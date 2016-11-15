@@ -1,5 +1,35 @@
+// the Machine's Constructor
+function Machine(power, title, capacity) {
+  // PROTECTED properties and methods
+  // should be used only for children
+  this._enabled = false;
+  this._power = power;
+  this._title = title || 'A simple machine';
+
+  this._enable = function() {
+    this._enabled = true;
+    console.log('enabled!');
+  };
+
+  this._disable = function() {
+    this._enabled = false;
+    console.log('disabled!');
+  };
+}
+
 // the coffe machine's Constructor
-function CoffeeMachine(power, capacity) {
+function CoffeeMachine(power, title, capacity) {
+  Machine.apply(this, arguments); // inheritance from Machine
+
+  // extend PROTECTED methods
+  var parentDisable = this._disable;
+  this._disable = function() {
+    // stop machine if turned off
+    parentDisable.call(this, arguments);
+    if (!this._disabled) {
+      this.stop();
+    }
+  };
   // the deviding private and public is ENCAPSULATION
 
   // PUBLIC properties and methods
@@ -10,39 +40,43 @@ function CoffeeMachine(power, capacity) {
     if (amount < 0) {
       throw new Error('Should be positive');
     }
-    if (amount > _capacity) {
-      throw new Error('Could not be more than ' + _capacity);
+    if (amount > capacity) {
+      throw new Error('Could not be more than ' + capacity);
     }
-    _waterAmount = amount;
+    waterAmount = amount;
   };
-  // getter for Water Amount
   this.getWaterAmount = function() {
-    return _waterAmount;
+    // getter for Water Amount
+    return waterAmount;
   };
   this.run = function() {
+    if (!self._enabled) {
+      throw new Error('It is turned off!');
+    }
     // setTimeout will run onReady() after getBoilTime() ms
-    _timerId = setTimeout(_onReady, _getBoilTime());
-    _startTime = Date.now();
-    console.log('A coffee machine is started');
+    timerId = setTimeout(onReady, getBoilTime());
+    startTime = Date.now();
+    console.log(this._title + ': is started, wait ' + getBoilTime() + 'ms');
   }
   this.stop = function() {
-    clearTimeout(_timerId);
-    _passedTime();
-    console.log('A coffee machine is stoped!');
+    // stop machine!
+    clearTimeout(timerId);
+    passedTime();
+    console.log(this._title + ': is stoped!');
   }
 
   // PRIVATE properties and methods
-  var _waterAmount = 0; // watter ammount
-  var _power = power || 100;
-  var _capacity = capacity || 500;
-  var WATER_HEAT_CAPACITY = 4200;
-  var DELTA_TEMP = 80;
-  var _timerId; // is used for stoping
-  var _startTime;
+  var waterAmount = 0; // watter ammount
+  //var power = power || 100;
+  var capacity = capacity || 500;
+  var WATERHEATCAPACITY = 4200;
+  var DELTATEMP = 80;
+  var timerId; // is used for stoping
+  var startTime;
   var self = this;
 
   // calculate the boil time
-  function _getBoilTime() {
+  function getBoilTime() {
     // "this" is undefined, could be used
     // 1) call
     //  this.run = function() {
@@ -50,38 +84,40 @@ function CoffeeMachine(power, capacity) {
     // };
     // 2) bind
     // var getBoilTime = function() {
-    //   return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+    //   return this.waterAmount * WATERHEATCAPACITY * 80 / power;
     // }.bind(this); <<<
     // 3) cache this
     // function CoffeeMachine(power) {
     //   var self = this; <<<
     //   function getBoilTime() {
-    //     return self.waterAmount * WATER_HEAT_CAPACITY * 80 / power; <<<
+    //     return self.waterAmount * WATERHEATCAPACITY * 80 / power; <<<
     //   }
     // }
-    return _waterAmount * WATER_HEAT_CAPACITY * DELTA_TEMP / _power;
+    return waterAmount * WATERHEATCAPACITY * DELTATEMP / self._power;
   }
 
   // when coffe is ready
-  function _onReady() {
-    _passedTime();
+  function onReady() {
+    passedTime();
     console.log('Coffee is ready');
+    self._disable(); // turn off
   }
 
-  function _passedTime() {
+  function passedTime() {
     var endTime = Date.now();
-    var elapsed = (endTime - _startTime) / 1000;
+    var elapsed = (endTime - startTime) / 1000;
     console.log('Passed', elapsed, 'seconds before:');
   }
 
-  console.log('A coffee machine ('+ _power +'W) is created');
+  console.log(this._title + ': ('+ power +'W) is created');
 }
 
 // create a coffe machine
-var coffeeMachine = new CoffeeMachine(10000, 500);
-// pour water
-coffeeMachine.setWaterAmount(10);
-console.log('The water amount is ', coffeeMachine.getWaterAmount());
-// start boiling
-coffeeMachine.run();
+var coffeeMachine = new CoffeeMachine(10000, 'A coffee machine', 500);
+
+coffeeMachine._enable(); // turn on
+coffeeMachine.setWaterAmount(30); // pour water
+console.log('The water amount is ' + coffeeMachine.getWaterAmount());
+coffeeMachine.run(); // start boiling
+coffeeMachine._disable(); // turn off
 // coffeeMachine.stop();
