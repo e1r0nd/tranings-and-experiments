@@ -67,17 +67,28 @@ body {
   color: #e6e6e6;
 }
 
-.todoapp h1 {
+.todoapp h1,
+.login-btn {
   position: absolute;
   top: -155px;
   width: 100%;
   font-size: 100px;
   font-weight: 100;
-  /*text-align: center;*/
   color: rgba(175, 47, 47, 0.15);
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
+}
+
+.login-btn {
+  top: -75px;
+  font-size: 32px;
+  text-align: right;
+  color: #4d4d4d;;
+}
+.form-btn {
+  padding: : 0 20px;
+
 }
 
 .new-todo,
@@ -285,7 +296,8 @@ label[for='toggle-all'] {
   display: inline;
 }
 
-.filters li a {
+.filters li a,
+.form-btn {
   color: inherit;
   margin: 3px;
   padding: 3px 7px;
@@ -294,7 +306,8 @@ label[for='toggle-all'] {
   border-radius: 3px;
 }
 
-.filters li a:hover {
+.filters li a:hover,
+.form-btn:hover {
   border-color: rgba(175, 47, 47, 0.1);
 }
 
