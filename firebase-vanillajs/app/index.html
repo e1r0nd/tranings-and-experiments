@@ -7,7 +7,31 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
-    <section class="todoapp">
+    <section class="todoapp" style="display: none;" id="loginForm">
+      <header class="header">
+        <a href="#" class="login-btn" id="returnBtn">Return?</a>
+        <h1>login</h1>
+        <div class="new-todo">
+          New visitor?
+        </div>
+      </header>
+      <section class="main">
+        <input class="new-todo" placeholder="email" id="email">
+        <input class="new-todo" placeholder="password" id="password">
+      </section>
+      <footer class="footer">
+        <ul class="filters">
+          <li>
+            <a href="#" class="form-btn">Login</a> or
+          </li>
+          <li>
+            <a href="#" class="form-btn">Register</a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+    <section class="todoapp" id="mainContainer">
+      <a href="#" class="login-btn" id="loginBtn">Login?/Logout</a>
       <header class="header">
         <h1>todos</h1>
         <input class="new-todo" placeholder="What needs to be done?" autofocus>
@@ -40,6 +64,19 @@
       <p>Modified by <a href="https://github.com/e1r0nd">Anatol Merezhanyi</a></p>
       <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDFHjZn6IEJUCbiSJRTntlt16bKtnwsbEw",
+        authDomain: "todomvc-4bb0c.firebaseapp.com",
+        databaseURL: "https://todomvc-4bb0c.firebaseio.com",
+        storageBucket: "todomvc-4bb0c.appspot.com",
+        messagingSenderId: "523212925018"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="js/base.js"></script>
     <script src="js/helpers.js"></script>
     <script src="js/store.js"></script>
