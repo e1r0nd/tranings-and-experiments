@@ -10,6 +10,11 @@
     return (scope || document).querySelectorAll(selector);
   };
 
+  // getElementById:
+  window.qid = function (selector, scope) {
+    return (scope || document).getElementById(selector);
+  };
+
   // addEventListener wrapper:
   window.$on = function (target, type, callback, useCapture) {
     target.addEventListener(type, callback, !!useCapture);

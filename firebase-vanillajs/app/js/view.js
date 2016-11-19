@@ -25,6 +25,8 @@
     this.$footer = qs('.footer');
     this.$toggleAll = qs('.toggle-all');
     this.$newTodo = qs('.new-todo');
+
+    this.$loginBtn = qid('loginBtn');
   }
 
   View.prototype._removeItem = function (id) {
@@ -127,6 +129,9 @@
       },
       editItemDone: function () {
         self._editItemDone(parameter.id, parameter.title);
+      },
+      formToggle: function () {
+        self._formToggler();
       }
     };
 
@@ -210,6 +215,9 @@
 
     } else if (event === 'itemEditCancel') {
       self._bindItemEditCancel(handler);
+
+    } else if (event === ' formToggle') {
+
     }
   };
 

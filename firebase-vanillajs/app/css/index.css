@@ -71,7 +71,7 @@ body {
 .login-btn {
   position: absolute;
   top: -155px;
-  width: 100%;
+  /*width: 100%;*/
   font-size: 100px;
   font-weight: 100;
   color: rgba(175, 47, 47, 0.15);
@@ -82,13 +82,13 @@ body {
 
 .login-btn {
   top: -75px;
+  width: 100%;
   font-size: 32px;
   text-align: right;
-  color: #4d4d4d;;
+  color: #4d4d4d;
 }
 .form-btn {
-  padding: : 0 20px;
-
+  padding: 0 20px;
 }
 
 .new-todo,

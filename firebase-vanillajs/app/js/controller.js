@@ -44,6 +44,14 @@
     self.view.bind('toggleAll', function (status) {
       self.toggleAll(status.completed);
     });
+
+    self.view.bind('loginBtn', function () {
+      self.loginBtn();
+    });
+
+    self.view.bind('cancelBtn', function () {
+      self.loginBtn();
+    });
   }
 
   /**
