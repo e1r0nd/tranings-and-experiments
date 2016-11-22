@@ -223,9 +223,9 @@ jQuery(function ($) {
         })
         .catch(function(error) {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+					var errorCode = error.code || 'Oops';
+          var errorMessage = error.message || 'We got an error!';
+          console.log(errorCode + ': ' + errorMessage);
           self.showError(errorMessage);
         });
 
@@ -241,9 +241,9 @@ jQuery(function ($) {
         })
         .catch(function(error) {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(errorCode, errorMessage);
+          var errorCode = error.code || 'Oops';
+          var errorMessage = error.message || 'We got an error!';
+          console.log(errorCode + ': ' + errorMessage);
           self.showError(errorMessage);
         });
 
@@ -257,9 +257,9 @@ jQuery(function ($) {
         console.log('logged out');
       }, function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+				var errorCode = error.code || 'Oops';
+				var errorMessage = error.message || 'We got an error!';
+				console.log(errorCode + ': ' + errorMessage);
         self.formToggle();
         self.showError(errorMessage);
       });
