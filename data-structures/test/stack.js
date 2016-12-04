@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require('assert');
-var Stack = require('../stack').Stack;
+let assert = require('assert');
+let Stack = require('../stack').Stack;
 
 describe('Stack', function() {
   it('should use LIFO', () => {
