@@ -5,16 +5,16 @@ var Stack = require('../stack').Stack;
 
 describe('Stack', function() {
   it('should use LIFO', () => {
-    let stack = new Stack();
+    let history = new Stack();
     
-    stack.push('#!/home');
-    stack.push('#!/about');
+    history.push('#!/home');
+    history.push('#!/about');
     
-    assert.equal(stack._length, 2);
-    assert.equal(stack.peek(), '#!/about');
-    assert.equal(stack.peek(), '#!/about');
-    assert.equal(stack.pop(), '#!/about');
-    assert.equal(stack.pop(), '#!/home');
-    assert.equal(stack._length, 0);
+    assert.equal(history._length, 2);
+    assert.equal(history.peek(), '#!/about');
+    assert.equal(history.peek(), '#!/about');
+    assert.equal(history.pop(), '#!/about');
+    assert.equal(history.pop(), '#!/home');
+    assert.equal(history._length, 0);
   });
 });
