@@ -1,18 +1,11 @@
 {
   "name": "data-structures",
-  "version": "1.0.0",
-  "description": "data structures in js",
-  "main": "stack.js",
-  "directories": {
-    "test": "test"
-  },
+  "version": "1.0",
   "dependencies": {
     "mocha": "^3.2.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "mocha -R spec --recursive test"
-  },
-  "author": "",
-  "license": "MIT"
+  }
 }
