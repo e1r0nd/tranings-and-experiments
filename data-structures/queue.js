@@ -1,29 +1,29 @@
 'use strict';
 
-class Stack {
+class Queue {
   constructor() {
     this._elements = [];
     this._length = 0;
   }
   
-  push(value) {
+  enqueue(value) {
     this._elements.push(value);
     this._length++;
   }
   
-  pop() {
+  dequeue() {
     if (this._length === 0) {
       return;
     }
     this._length--;
-    return this._elements.pop();
+    return this._elements.shift();
   }
   
   peek() {
-    return this._elements[this._length - 1];
+    return this._elements[0];
   }
 }
 
 module.exports = {
-  Stack: Stack
+  Queue: Queue
 };
