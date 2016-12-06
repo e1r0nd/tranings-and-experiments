@@ -1,3 +1,7 @@
+/*****************************************************
+* Test: Stack. Data Structures in JS, November 2016
+* Anatol Marezhanyi http://linkedin.com/in/merezhany/ 
+*****************************************************/
 'use strict';
 
 let assert = require('assert');

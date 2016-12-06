@@ -1,3 +1,7 @@
+/*****************************************************
+* Class: Queue. Data Structures in JS, November 2016
+* Anatol Marezhanyi http://linkedin.com/in/merezhany/ 
+*****************************************************/
 'use strict';
 
 class Queue {
