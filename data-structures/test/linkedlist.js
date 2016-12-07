@@ -8,7 +8,7 @@
 let assert = require('assert');
 let LinkedList = require('../linkedlist').LinkedList;
 
-describe('Linked List', function() {
+describe('Linked List', () => {
   it('should use List', () => {
     let menu = new LinkedList();
     
