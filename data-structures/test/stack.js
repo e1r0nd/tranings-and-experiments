@@ -7,7 +7,7 @@
 let assert = require('assert');
 let Stack = require('../stack').Stack;
 
-describe('Stack', function() {
+describe('Stack', () => {
   it('should use LIFO', () => {
     let history = new Stack();
     

@@ -7,7 +7,7 @@
 let assert = require('assert');
 let Queue = require('../queue').Queue;
 
-describe('Queue', function() {
+describe('Queue', () => {
   it('should use FIFO', () => {
     let orders = new Queue();
     
