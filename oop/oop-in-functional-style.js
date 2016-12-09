@@ -9,12 +9,12 @@ function Machine(power, title) {
   this._enable = function() {
     this._enabled = true;
     console.log(this._title + ': enabled!');
-  };
+  }
 
   this._disable = function() {
     this._enabled = false;
     console.log(this._title + ': disabled!');
-  };
+  }
 }
 
 // the coffe machine's Constructor
@@ -29,7 +29,7 @@ function CoffeeMachine(power, title, capacity) {
     if (!this._disabled) {
       this.stop();
     }
-  };
+  }
   // the deviding private and public is ENCAPSULATION
 
   // PUBLIC properties and methods
@@ -44,11 +44,11 @@ function CoffeeMachine(power, title, capacity) {
       throw new Error('Could not be more than ' + capacity);
     }
     waterAmount = amount;
-  };
+  }
   this.getWaterAmount = function() {
     // getter for Water Amount
     return waterAmount;
-  };
+  }
   this.run = function() {
     if (!self._enabled) {
       throw new Error('It is turned off!');
