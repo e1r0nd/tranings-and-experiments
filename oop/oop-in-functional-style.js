@@ -121,7 +121,6 @@ coffeeMachine.setWaterAmount(30); // pour water
 console.log('The water amount is ' + coffeeMachine.getWaterAmount());
 coffeeMachine.run(); // start boiling
 coffeeMachine._disable(); // turn off
-// coffeeMachine.stop();
 
 console.log('Attempt #2:');
 coffeeMachine._enable(); // turn on
