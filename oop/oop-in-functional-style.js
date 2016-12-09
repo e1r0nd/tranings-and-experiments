@@ -1,5 +1,5 @@
 // the Machine's Constructor
-function Machine(power, title, capacity) {
+function Machine(power, title) {
   // PROTECTED properties and methods
   // should be used only for children
   this._enabled = false;
