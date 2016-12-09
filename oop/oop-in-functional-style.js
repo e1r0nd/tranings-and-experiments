@@ -115,9 +115,16 @@ function CoffeeMachine(power, title, capacity) {
 // create a coffe machine
 var coffeeMachine = new CoffeeMachine(10000, 'A coffee machine', 500);
 
+console.log('Attempt #1:');
 coffeeMachine._enable(); // turn on
 coffeeMachine.setWaterAmount(30); // pour water
 console.log('The water amount is ' + coffeeMachine.getWaterAmount());
 coffeeMachine.run(); // start boiling
 coffeeMachine._disable(); // turn off
 // coffeeMachine.stop();
+
+console.log('Attempt #2:');
+coffeeMachine._enable(); // turn on
+coffeeMachine.setWaterAmount(30); // pour water
+console.log('The water amount is ' + coffeeMachine.getWaterAmount());
+coffeeMachine.run(); // start boiling
