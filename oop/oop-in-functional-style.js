@@ -77,7 +77,7 @@ function CoffeeMachine(power, title, capacity) {
 
   // calculate the boil time
   function getBoilTime() {
-    // "this" is undefined, could be used
+    // "this" is undefined, therefore could be used
     // 1) call
     //  this.run = function() {
     //   setTimeout(onReady, getBoilTime.call(this)); <<<
