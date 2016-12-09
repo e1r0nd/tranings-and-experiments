@@ -8,12 +8,12 @@ function Machine(power, title) {
 
   this._enable = function() {
     this._enabled = true;
-    console.log('enabled!');
+    console.log(this._title + ': enabled!');
   };
 
   this._disable = function() {
     this._enabled = false;
-    console.log('disabled!');
+    console.log(this._title + ': disabled!');
   };
 }
 
