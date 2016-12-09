@@ -16,9 +16,7 @@ var Machine = {
 }
 
 // the coffe machine's Constructor
-var CoffeeMachine = {/*
-  // Machine.apply(this, arguments); // inheritance from Machine
-
+function coffeeMachine() {/*
   // extend PROTECTED methods
   var parentDisable = this._disable;
   this._disable = function() {
@@ -106,10 +104,9 @@ var CoffeeMachine = {/*
     var elapsed = (endTime - startTime) / 1000;
     console.log('Passed', elapsed, 'seconds before:');
   }
-
-  console.log(this._title + ': ('+ power +'W) is created');
 */
-  __proto__: Machine,
+  __proto__: Machine, // inheritance from Machine
+  
   // Initialization: create properties
   init: function(power, title, capacity) {
     capacity: capacity || 500;
@@ -121,11 +118,8 @@ var CoffeeMachine = {/*
 }
 
 // create a coffe machine
-// var coffeeMachine = new CoffeeMachine(10000, 'A coffee machine', 500);
+coffeeMachine.init(10000, 'A coffee machine', 500);
 
-CoffeeMachine.init(10000, 'A coffee machine', 500);
-CoffeeMachine._enable(); // turn on
-/*
 console.log('Attempt #1:');
 coffeeMachine._enable(); // turn on
 coffeeMachine.setWaterAmount(30); // pour water
@@ -138,4 +132,3 @@ coffeeMachine._enable(); // turn on
 coffeeMachine.setWaterAmount(30); // pour water
 console.log('The water amount is ' + coffeeMachine.getWaterAmount());
 coffeeMachine.run(); // start boiling
-*/
