@@ -16,7 +16,7 @@ var Machine = {
 }
 
 // the coffe machine's Constructor
-function coffeeMachine() {/*
+function coffeeMachine(power, title, capacity) {/*
   // extend PROTECTED methods
   var parentDisable = this._disable;
   this._disable = function() {
@@ -119,6 +119,7 @@ function coffeeMachine() {/*
 
 // create a coffe machine
 coffeeMachine.init(10000, 'A coffee machine', 500);
+var coffeeMachine = new CoffeeMachine(10000, 'A coffee machine', 500);
 
 console.log('Attempt #1:');
 coffeeMachine._enable(); // turn on
