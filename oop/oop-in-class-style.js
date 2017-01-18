@@ -70,8 +70,8 @@ class CoffeeMachine extends Machine { // inheritance from Machine
     this._disable(); // turn off
   }
   passedTime() {
-    var endTime = Date.now();
-    var elapsed = (endTime - this.startTime) / 1000;
+    const endTime = Date.now();
+    const elapsed = (endTime - this.startTime) / 1000;
     console.log(`Passed ${elapsed} seconds before:`);
   }
   run() {
