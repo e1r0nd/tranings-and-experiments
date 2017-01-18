@@ -15,6 +15,7 @@ Machine.prototype._disable = function() {
 
 // the coffe machine's Constructor
 function CoffeeMachine(power, title, capacity) {
+  // PROTECTED properties for every Object
   this.power = power;
   this.title = title || 'A simple machine';
   this.capacity = capacity || 500;
@@ -25,6 +26,8 @@ function CoffeeMachine(power, title, capacity) {
   this.DELTATEMP = 80;
   
   console.log(this.title + ': ('+ this.power +'W) is created');
+  // PUBLIC properties and methods describe via "prototype"
+  // PRIVATE properties and methods are impossible with protitypes
 }
 
 CoffeeMachine.prototype = Object.create(Machine.prototype); // inheritance from Machine
