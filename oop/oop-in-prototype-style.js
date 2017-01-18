@@ -44,6 +44,15 @@ function CoffeeMachine(power, title, capacity) {
 CoffeeMachine.prototype = Object.create(Machine.prototype); // inheritance from Machine
 CoffeeMachine.prototype.constructor = CoffeeMachine; 
 
+// extend PROTECTED methods
+CoffeeMachine.prototype._disable = function() {
+  // stop machine if turned off
+  Machine.prototype._disable.apply(this, arguments);
+  if (!this._enabled) {
+    this.stop();
+  }
+};
+
 // calculate the boil time
 CoffeeMachine.prototype.getBoilTime = function() {
   return this.waterAmount * this.WATERHEATCAPACITY * this.DELTATEMP / this.power;
