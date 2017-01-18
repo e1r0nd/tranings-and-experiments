@@ -1,22 +1,31 @@
 // the Machine's Constructor
-var Machine = {
+function Machine() {
   // PROTECTED properties and methods
   // should be used only for children
-  _enabled: false,
-
-  _enable: function() {
-    this._enabled = true;
-    console.log(this._title + ': enabled!');
-  },
-
-  _disable: function() {
-    this._enabled = false;
-    console.log(this._title + ': disabled!');
-  }
+  this._enabled = false;
+}
+Machine.prototype._enable = function() {
+  this._enabled = true;
+  console.log(this.title + ': enabled!');
+},
+Machine.prototype._disable = function() {
+  this._enabled = false;
+  console.log(this.title + ': disabled!');
 }
 
 // the coffe machine's Constructor
-function coffeeMachine(power, title, capacity) {/*
+function CoffeeMachine(power, title, capacity) {
+  this.power = power;
+  this.title = title || 'A simple machine';
+  this.capacity = capacity || 500;
+  this.waterAmount = 0; // watter ammount
+  this.timerId; // is used for stoping
+  this.startTime;
+  this.WATERHEATCAPACITY = 4200;
+  this.DELTATEMP = 80;
+  
+  console.log(this.title + ': ('+ this.power +'W) is created');
+/*
   // extend PROTECTED methods
   var parentDisable = this._disable;
   this._disable = function() {
@@ -27,98 +36,62 @@ function coffeeMachine(power, title, capacity) {/*
     }
   };
   // the deviding private and public is ENCAPSULATION
-
-  // PUBLIC properties and methods
-  // everything in "this" is public
-
-  // setter for Water Amount
-  this.setWaterAmount = function(amount) {
-    if (amount < 0) {
-      throw new Error('Should be positive');
-    }
-    if (amount > capacity) {
-      throw new Error('Could not be more than ' + capacity);
-    }
-    waterAmount = amount;
-  };
-  this.getWaterAmount = function() {
-    // getter for Water Amount
-    return waterAmount;
-  };
-  this.run = function() {
-    if (!self._enabled) {
-      throw new Error('It is turned off!');
-    }
-    // setTimeout will run onReady() after getBoilTime() ms
-    timerId = setTimeout(onReady, getBoilTime());
-    startTime = Date.now();
-    console.log(this._title + ': is started, wait ' + getBoilTime() + 'ms');
-  }
-  this.stop = function() {
-    // stop machine!
-    clearTimeout(timerId);
-    passedTime();
-    console.log(this._title + ': is stoped!');
-  }
-
-  // PRIVATE properties and methods
-  var waterAmount = 0; // watter ammount
-  //var power = power || 100;
-  var capacity = capacity || 500;
-  var WATERHEATCAPACITY = 4200;
-  var DELTATEMP = 80;
-  var timerId; // is used for stoping
-  var startTime;
-  var self = this;
-
-  // calculate the boil time
-  function getBoilTime() {
-    // "this" is undefined, therefore could be used
-    // 1) call
-    //  this.run = function() {
-    //   setTimeout(onReady, getBoilTime.call(this)); <<<
-    // };
-    // 2) bind
-    // var getBoilTime = function() {
-    //   return this.waterAmount * WATERHEATCAPACITY * 80 / power;
-    // }.bind(this); <<<
-    // 3) cache this
-    // function CoffeeMachine(power) {
-    //   var self = this; <<<
-    //   function getBoilTime() {
-    //     return self.waterAmount * WATERHEATCAPACITY * 80 / power; <<<
-    //   }
-    // }
-    return waterAmount * WATERHEATCAPACITY * DELTATEMP / self._power;
-  }
-
-  // when coffe is ready
-  function onReady() {
-    passedTime();
-    console.log('Coffee is ready');
-    self._disable(); // turn off
-  }
-
-  function passedTime() {
-    var endTime = Date.now();
-    var elapsed = (endTime - startTime) / 1000;
-    console.log('Passed', elapsed, 'seconds before:');
-  }
 */
-  __proto__: Machine, // inheritance from Machine
-  
-  // Initialization: create properties
-  init: function(power, title, capacity) {
-    capacity: capacity || 500;
-    this._power = power;
-    this._title = title || 'A simple machine';
-    console.log(this._title + ': ('+ power +'W) is created');
-  }
+  // PUBLIC properties and methods describe via "prototype"
+  // PRIVATE properties and methods are impossible with protitypes
+}
 
+CoffeeMachine.prototype = Object.create(Machine.prototype); // inheritance from Machine
+CoffeeMachine.prototype.constructor = CoffeeMachine; 
+
+// calculate the boil time
+CoffeeMachine.prototype.getBoilTime = function() {
+  return this.waterAmount * this.WATERHEATCAPACITY * this.DELTATEMP / this.power;
+}
+
+// when coffe is ready
+CoffeeMachine.prototype.onReady = function() {
+  this.passedTime();
+  console.log('Coffee is ready');
+  this._disable(); // turn off
+}
+CoffeeMachine.prototype.passedTime = function() {
+  var endTime = Date.now();
+  var elapsed = (endTime - this.startTime) / 1000;
+  console.log('Passed', elapsed, 'seconds before:');
+}
+
+// setter for Water Amount
+CoffeeMachine.prototype.setWaterAmount = function(amount) {
+  if (amount < 0) {
+    throw new Error('Should be positive');
+  }
+  if (amount > this.capacity) {
+    throw new Error('Could not be more than ' + this.capacity);
+  }
+  this.waterAmount = amount;
+};
+CoffeeMachine.prototype.getWaterAmount = function() {
+  // getter for Water Amount
+  return this.waterAmount;
+};
+CoffeeMachine.prototype.run = function() {
+  if (!this._enabled) {
+    throw new Error('It is turned off!');
+  }
+  // setTimeout will run onReady() after getBoilTime() ms
+  this.timerId = setTimeout(this.onReady.bind(this), this.getBoilTime());
+  this.startTime = Date.now();
+  console.log(this.title + ': is started, wait ' + this.getBoilTime() + 'ms');
+}
+CoffeeMachine.prototype.stop = function() {
+  // stop machine!
+  clearTimeout(this.timerId);
+  this.passedTime();
+  console.log(this.title + ': is stoped!');
 }
 
 // create a coffe machine
-coffeeMachine.init(10000, 'A coffee machine', 500);
 var coffeeMachine = new CoffeeMachine(10000, 'A coffee machine', 500);
 
 console.log('Attempt #1:');
