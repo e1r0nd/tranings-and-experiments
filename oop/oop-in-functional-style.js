@@ -26,7 +26,7 @@ function CoffeeMachine(power, title, capacity) {
   this._disable = function() {
     // stop machine if turned off
     parentDisable.call(this, arguments);
-    if (!this._disabled) {
+    if (!this._enabled) {
       this.stop();
     }
   }
