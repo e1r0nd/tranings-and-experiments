@@ -42,7 +42,7 @@ function CoffeeMachine(power, title, capacity) {
 }
 
 CoffeeMachine.prototype = Object.create(Machine.prototype); // inheritance from Machine
-CoffeeMachine.prototype.constructor = CoffeeMachine; 
+CoffeeMachine.prototype.constructor = CoffeeMachine; //store constructor
 
 // extend PROTECTED methods
 CoffeeMachine.prototype._disable = function() {
