@@ -25,20 +25,6 @@ function CoffeeMachine(power, title, capacity) {
   this.DELTATEMP = 80;
   
   console.log(this.title + ': ('+ this.power +'W) is created');
-/*
-  // extend PROTECTED methods
-  var parentDisable = this._disable;
-  this._disable = function() {
-    // stop machine if turned off
-    parentDisable.call(this, arguments);
-    if (!this._disabled) {
-      this.stop();
-    }
-  };
-  // the deviding private and public is ENCAPSULATION
-*/
-  // PUBLIC properties and methods describe via "prototype"
-  // PRIVATE properties and methods are impossible with protitypes
 }
 
 CoffeeMachine.prototype = Object.create(Machine.prototype); // inheritance from Machine
