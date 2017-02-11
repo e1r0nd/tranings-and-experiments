@@ -21,7 +21,7 @@ describe('Hash Table', () => {
     assert.equal(employees.get('Jack Daniels'), 'manager');
 
     employees.remove('Jack Daniels')
-    assert.equal(employees.get('Jack Daniels'), undefined);
+    assert.equal(employees.get('Jack Daniels'), false);
 
   });
 });

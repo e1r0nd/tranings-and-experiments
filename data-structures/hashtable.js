@@ -22,7 +22,7 @@ class HashTable {
   }
 
   get(key) {
-    return this._map[this._hashKey(key)];
+    return this._map[this._hashKey(key)] || false;
   }
   
   remove(key) {
