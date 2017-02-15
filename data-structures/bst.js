@@ -31,5 +31,5 @@ class HashTable {
 }
 
 module.exports = {
-  HashTable
+  HashTable: HashTable
 };

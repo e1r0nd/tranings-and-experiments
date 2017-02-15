@@ -20,7 +20,8 @@ describe('Hash Table', () => {
     employees.set('Jack Daniels', 'manager');
     assert.equal(employees.get('Jack Daniels'), 'manager');
 
-    employees.remove('Jack Daniels');
+    employees.remove('Jack Daniels')
     assert.equal(employees.get('Jack Daniels'), false);
+
   });
 });
