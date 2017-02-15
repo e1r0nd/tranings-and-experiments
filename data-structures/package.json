@@ -6,7 +6,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha -R spec --recursive test",
-    "test1": "mocha -R spec test/tree"
+    "test": "mocha -R spec --recursive test"
   }
 }
