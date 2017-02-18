@@ -28,7 +28,7 @@ class Tree {
       return;
     }
 
-    this._traverse(function(node) {
+    this._traverse((node) => {
       if (parentValue === node.value) {
         node.children.push(newNode);
       }
@@ -36,8 +36,8 @@ class Tree {
   }
   
   remove(value) {
-    this._traverse(function(node) {
-      node.children.some(function(childNode, index) {
+    this._traverse((node) => {
+      node.children.some((childNode, index) => {
         if (value === childNode.value) {
           return !!node.children.splice(index, 1);
         }
@@ -48,7 +48,7 @@ class Tree {
   search(value) {
     let exists = false;
 
-    this._traverse(function(node) {
+    this._traverse((node) => {
       if (value === node.value) {
         exists = true;
       }
@@ -56,7 +56,6 @@ class Tree {
 
     return exists;
   }
-
 }
 
 module.exports = {
