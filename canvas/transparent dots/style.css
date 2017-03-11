@@ -1,0 +1,12 @@
+html, body {
+  margin: 0;
+}
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+canvas {
+  background: #000;
+  border: 1px solid black;
+  margin: auto;
+}
