@@ -22,3 +22,6 @@ Serverless Application using Google Firebase. Based on jQuery TodoMVC.
 
 **es6-babel-grunt**<br>
 babel + grunt - minimal
+
+**removeDups.js**<br>
+Remove duplicated elements in two arrays
