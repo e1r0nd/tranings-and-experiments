@@ -25,3 +25,6 @@ babel + grunt - minimal
 
 **removeDups.js**<br>
 Remove duplicated elements in two arrays
+
+**data-structures**<br>
+Data Sructures in JavaScript
