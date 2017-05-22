@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './Header';
 import Dropdown from './Dropdown';
+import RegistrationForm from './RegistrationForm';
+
 import './App.css';
 
 const menu = [
@@ -32,6 +34,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Dropdown />
+        <RegistrationForm />
       </div>
     );
   }
