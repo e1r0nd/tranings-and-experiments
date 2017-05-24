@@ -1,20 +1,9 @@
-const hero = document.querySelector('.hero');
-const text = document.querySelector('h1');
-const walk = 100;
+const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
-function shadow(e) {
-  const { offsetWidth: width, offsetHeight: height } = hero;
-  let { offsetX: x, offsetY: y } = e;
-
-  if (this !== e.target) {
-    x += e.target.offsetLeft;
-    y += e.target.offsetRight;
-  }
-
-  const xWalk = (x / width * walk) - (walk / 2);
-  const yWalk = (y / height * walk) - (walk / 2);
-
-  text.style.textShadow = `${xWalk}px ${yWalk}px 0 red`;
+function strip(bandName) {
+  return bandName.replace(/(^a | an | the )/i, '').trim();
 }
 
-hero.addEventListener('mousemove', shadow);
+const sortedBands = bands.sort((a, b) => (strip(a) > strip(b)) ? 1 : -1);
+
+document.querySelector('#bands').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
