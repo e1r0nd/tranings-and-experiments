@@ -1,6 +1,7 @@
 import React from "react";
 
 import Todo from "../components/Todo";
+import InputTodo from "../components/InputTodo";
 import * as TodoActions from "../actions/TodoActions";
 import TodoStore from "../stores/TodoStore";
 
@@ -44,6 +45,7 @@ export default class Todos extends React.Component {
         <button onClick={this.reloadTodos.bind(this)}>Reload!</button>
         <h1>Todos</h1>
         <ul>{TodoComponents}</ul>
+        <InputTodo title="" />
       </div>
     );
   }
