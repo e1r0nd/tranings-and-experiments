@@ -28,3 +28,9 @@ Remove duplicated elements in two arrays
 
 **data-structures**<br>
 Data Sructures in JavaScript
+
+**redux-remake**<br>
+Redux tutorial https://www.youtube.com/playlist?list=PLqHlAwsJRxANFIgAf7BO8hNYdvipLERxQ
+
+**react-intro**<br>
+React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKdYGv1CDRUOl
