@@ -17,7 +17,7 @@ OOP in JS http://learn.javascript.ru/oop
 **canvas**<br>
 Playing with Canvas
 
-**firebae-todos**<br>
+**firebase-todos**<br>
 Serverless Application using Google Firebase. Based on jQuery TodoMVC.
 
 **es6-babel-grunt**<br>
