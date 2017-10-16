@@ -34,3 +34,6 @@ Redux tutorial https://www.youtube.com/playlist?list=PLqHlAwsJRxANFIgAf7BO8hNYdv
 
 **react-intro**<br>
 React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKdYGv1CDRUOl
+
+**hello-world**
+The project was bootstrapped with Create React App
