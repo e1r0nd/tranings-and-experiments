@@ -38,5 +38,3 @@ React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKd
 **hello-world**
 The project was bootstrapped with Create React App
 
-**hackerRank**
-Puzzles from Hacker Rank https://www.hackerrank.com
