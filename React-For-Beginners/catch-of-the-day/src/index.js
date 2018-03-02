@@ -1,2 +1,8 @@
-// let's go!
-alert('say');
+import React, { Component } from "react";
+import { render } from "react-dom";
+import StorePicker from "./components/StorePicker";
+
+render(
+    <StorePicker />,
+    document.querySelector("#main")
+);
