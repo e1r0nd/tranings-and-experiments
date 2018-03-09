@@ -11,6 +11,11 @@ class App extends Component {
         order: {},
     };
 
+    componentDidMount() {
+        const {params} = this.props.match.params;
+        this.ref = base.syncState(`${params.storeId}/fishes`);
+    };
+
     addFish = fish => {
         const fishes = {...this.fishes};
         fishes[`fish${Date.now()}`] = fish;
@@ -45,7 +50,7 @@ class App extends Component {
                         }
                     </ul>
                 </div>
-                <Order />
+                <Order {...this.state} />
                 <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
             </div>
         );
