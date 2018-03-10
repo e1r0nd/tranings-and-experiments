@@ -39,6 +39,18 @@ class App extends Component {
         this.setState({ fishes });
     };
 
+    updateFish = (key, updatedFish) => {
+        const fishes = {...this.fishes};
+        fishes[key] = updatedFish;
+        this.setState({ fishes });
+    }
+
+    deleteFish = (key) => {
+        const fishes = {...this.fishes};
+        fishes[key] = null;
+        this.setState({ fishes });
+    }
+
     loadSampleFishes = () => {
         this.setState({ fishes: sampleFishes });
     };
@@ -48,6 +60,12 @@ class App extends Component {
         order[key] = order[key] + 1 || 1;
         this.setState({ order });
     };
+
+    removeFromOrder = (key) => {
+        const order = {...this.state.order};
+        delete order[key];
+        this.setState({ order });
+    }
 
     render() {
         return (
@@ -67,8 +85,11 @@ class App extends Component {
                         }
                     </ul>
                 </div>
-                <Order {...this.state} />
-                <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
+                <Order {...this.state} removeFromOrder={this.removeFromOrder}/>
+                <Inventory addFish={this.addFish}
+                updateFish={this.updateFish}
+                deleteFish={this.deleteFish}
+                loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} />
             </div>
         );
     }
