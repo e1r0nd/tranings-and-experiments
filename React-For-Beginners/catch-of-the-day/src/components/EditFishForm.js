@@ -15,7 +15,7 @@ class EditFishForm extends Component {
             <div className="fish-edit">
                 <input name="name"  type="text" placeholder="Name" value={this.props.fish.name} onChange={this.handleChange}/>
                 <input name="price"  type="text" placeholder="Price" value={this.props.fish.price} onChange={this.handleChange}/>
-                <select name="status" >
+                <select name="status" onChange={this.handleChange}>
                     <option value="available">Fresh!</option>
                     <option value="unavailable">Sold Out!</option>
                 </select>
