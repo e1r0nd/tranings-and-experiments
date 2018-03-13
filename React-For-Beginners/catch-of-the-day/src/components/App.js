@@ -89,7 +89,9 @@ class App extends Component {
                 <Inventory addFish={this.addFish}
                 updateFish={this.updateFish}
                 deleteFish={this.deleteFish}
-                loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} />
+                loadSampleFishes={this.loadSampleFishes}
+                fishes={this.state.fishes}
+                storeId={this.props.match.params.storeId} />
             </div>
         );
     }

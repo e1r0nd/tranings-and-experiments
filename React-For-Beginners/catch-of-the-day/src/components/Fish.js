@@ -9,7 +9,6 @@ class Fish extends Component {
             name: PropTypes.string,
             desc: PropTypes.string,
             status: PropTypes.string,
-            price: PropTypes.number,
         }),
         addToOrder: PropTypes.func
     }
