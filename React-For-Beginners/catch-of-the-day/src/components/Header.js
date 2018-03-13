@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-const Header = ({tagline}) => (
+const Header = props => (
     <header className="top">
         <h1>Catch
             <span className="ofThe">
@@ -10,9 +11,13 @@ const Header = ({tagline}) => (
             Day
         </h1>
         <h3 className="tag-line">
-            <span>{tagline}</span>
+            <span>{props.tagline}</span>
         </h3>
     </header>
 );
+
+Header.protoTypes = {
+    tagline: PropTypes.string
+}
 
 export default Header;
