@@ -5,7 +5,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": [{
+      "sources": "/timestamp",
+      "function": "app"
+    }]
   },
   "functions": {
     "predeploy": [
