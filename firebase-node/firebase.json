@@ -1,19 +1,9 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
     "rewrites": [{
-      "sources": "/timestamp",
+      "source": "/timestamp",
       "function": "app"
     }]
-  },
-  "functions": {
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run lint"
-    ]
   }
 }
