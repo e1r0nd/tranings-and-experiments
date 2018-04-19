@@ -1,5 +1,22 @@
 function comments(state = [], action) {
-  return state;
+  switch (action.type) {
+    case "ADD_COMMENT":
+      const i = action.index;
+      return [
+        ...state.slice(0, i), // before the one we are updating
+        { ...state[i], likes: state[i].likes + 1 },
+        ...state.slice(i + 1) // after the one we are updating
+      ];
+    case "REMOVE_COMMENT":
+      const i = action.index;
+      return [
+        ...state.slice(0, i), // before the one we are updating
+        { ...state[i], likes: state[i].likes + 1 },
+        ...state.slice(i + 1) // after the one we are updating
+      ];
+    default:
+      return state;
+  }
 }
 
 export default comments;
