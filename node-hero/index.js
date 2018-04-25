@@ -19,30 +19,36 @@ app.engine(
 app.set("view engine", ".hbs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/aw", (req, res) => {
+app.get("/", (request, response) => {
+  response.render("home", {
+    name: "John"
+  });
+});
+
+app.get("/weather", (req, res) => {
   rp({
     uri:
       "http://apidev.accuweather.com/currentconditions/v1/2-273125_1_AL.json",
     qs: {
-      language: en,
+      language: "en",
       apiKey: "hoArfRosT1215"
     },
     json: true
   })
     .then(data => {
-      console.log(data);
-      res.render("index", data);
+      const temperature =
+        data[0].Temperature.Metric.Value + data[0].Temperature.Metric.Unit;
+      const condition = data[0].WeatherText;
+
+      res.render("weather", {
+        temperature,
+        condition
+      });
     })
     .catch(err => {
       console.log(err);
       res.render("error");
     });
-});
-
-app.get("/", (request, response) => {
-  response.render("home", {
-    name: "John"
-  });
 });
 
 app.listen(3000);
