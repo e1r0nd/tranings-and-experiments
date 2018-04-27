@@ -15,7 +15,13 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
     "lodash": "^4.17.5",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "bcrypt": "1.0.2",
+    "body-parser": "1.15.1",
+    "connect-redis": "3.0.2",
+    "express-session": "1.13.0",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0"
   },
   "devDependencies": {
     "mocha": "^5.1.1"

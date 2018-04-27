@@ -1,13 +1,15 @@
 require("./app/index");
+const app = require("./auth");
+const port = process.env.PORT || 3000;
 
 // index.js
 const path = require("path");
-const express = require("express");
+// const express = require("express");
 const exphbs = require("express-handlebars");
 
 const rp = require("request-promise");
 
-const app = express();
+// const app = express();
 app.engine(
   ".hbs",
   exphbs({
@@ -51,4 +53,10 @@ app.get("/weather", (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(port, function(err) {
+  if (err) {
+    throw err;
+  }
+
+  console.log(`server is listening on ${port}...`);
+});
