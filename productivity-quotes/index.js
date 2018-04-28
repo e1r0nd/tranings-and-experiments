@@ -1,3 +1,5 @@
+"use strict";
+
 const app = require("./app/index");
 const port = process.env.PORT || 3000;
 

@@ -1,10 +1,19 @@
-const calc = require("./calc");
-const numbersToAdd = [3, 4, 10, 2];
+"use strict";
 
-const result = calc.sum(numbersToAdd);
-console.log(`The result is: ${result}`);
+const express = require("express");
+const helmet = require("helmet");
+const quotes = require("./quotes");
 
-const _ = require("lodash");
-_.assign({ a: 1 }, { b: 2 }, { c: 3 });
+const app = express();
 
-require("./fileread");
+app.use(helmet());
+
+app.get("/", (request, response) => {
+  const max = quotes.length - 1;
+  const randomIndex = Math.floor(Math.random() * max);
+  const quote = quotes[randomIndex];
+
+  response.json(quotes[randomIndex]);
+});
+
+module.exports = app;
