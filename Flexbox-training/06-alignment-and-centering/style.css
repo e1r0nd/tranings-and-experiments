@@ -212,7 +212,7 @@ input::-moz-focus-inner {
 }
 
 .box {
-  /* width: 33.333%; */
+  width: 33.333%;
 }
 
 .box1 {
@@ -237,6 +237,7 @@ input::-moz-focus-inner {
 }
 
 .container1 {
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
