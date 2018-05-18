@@ -38,3 +38,7 @@ React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKd
 **hello-world**
 The project was bootstrapped with Create React App
 
+**Flexbox-training**
+We Bos's Flex CSS tutorial http://flexbox.io
+
+
