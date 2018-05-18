@@ -166,19 +166,24 @@ input::-moz-focus-inner {
 }
 
 /* Colours for each box */
-.box1 {
+.box1,
+.newbox1 {
   background: #1abc9c;
 }
-.box2 {
+.box2,
+.newbox2 {
   background: #3498db;
 }
-.box3 {
+.box3,
+.newbox3 {
   background: #9b59b6;
 }
-.box4 {
+.box4,
+.newbox4 {
   background: #34495e;
 }
-.box5 {
+.box5,
+.newbox5 {
   background: #f1c40f;
 }
 .box6 {
@@ -200,25 +205,38 @@ input::-moz-focus-inner {
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: flex-start;
   border: 10px solid mistyrose;
-  height: 100vh;
+  height: 50vh;
 }
 
 .box {
   /* width: 33.333%; */
 }
 
-.box2 {
-  /* padding-bottom: 200px; */
+.box1 {
+  font-size: 150px;
 }
-
+.box2 {
+  padding-bottom: 200px;
+}
+.box5 {
+  font-size: 50px;
+}
 .box6 {
-  /* padding-bottom: 0; */
+  padding-bottom: 0;
 }
 
 .box9 {
-  /* padding-bottom: 50px; */
-  /* align-self: stretch; */
+  padding-bottom: 50px;
+  align-self: stretch;
+}
+.box10 {
+  font-size: 250px;
+}
+
+.container1 {
+  flex-direction: column;
+  justify-content: flex-end;
 }
