@@ -226,6 +226,7 @@ input::-moz-focus-inner {
 }
 .box6 {
   padding-bottom: 0;
+  align-self: end;
 }
 
 .box9 {
@@ -240,4 +241,5 @@ input::-moz-focus-inner {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: stretch;
 }
