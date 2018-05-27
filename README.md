@@ -41,4 +41,5 @@ The project was bootstrapped with Create React App
 **Flexbox-training**
 Wes Bos's Flex CSS tutorial http://flexbox.io
 
-
+**node-hero**
+Node hero tutorial by Risingstack https://risingstack.com/resources/node-hero
