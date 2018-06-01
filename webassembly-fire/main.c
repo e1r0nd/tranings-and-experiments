@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
 #define WASM_EXPORT __attribute__((visibility("default")))
-int colors[320 * 200 * 4];
-int video_buffer[320 * 200];
+unsigned char colors[320 * 200 * 4];
+unsigned char video_buffer[320 * 200];
 
 unsigned char Elf[2400]={
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -152,10 +152,11 @@ unsigned char Get_Pixel(int x, int y);
 void Put_Pixel(int x, int y, unsigned char c)
 {
 video_buffer[(y<<8)+(y<<6)+x]=c;
-colors[(y<<8)+(y<<6)+4*x] = palette[c].red;
-colors[(y<<8)+(y<<6)+4*x+1] = palette[c].green;
-colors[(y<<8)+(y<<6)+4*x+2] = palette[c].blue;
-colors[(y<<8)+(y<<6)+4*x+3] = 255;
+
+colors[(y*320+x)*4] = palette[c].red;
+colors[(y*320+x)*4+1] = palette[c].green;
+colors[(y*320+x)*4+2] = palette[c].blue;
+colors[(y*320+x)*4+3] = 255;
 }
 
 unsigned char Get_Pixel(int x, int y)
@@ -185,8 +186,6 @@ unsigned char c;
  }
 }
 
-#define WASM_EXPORT __attribute__((visibility("default")))
-
 unsigned char c=0, u=1;
 
 WASM_EXPORT
@@ -209,4 +208,14 @@ if (u==0 && c<=30) u=1;
 Fire();
 
   return rand()%255;
+}
+
+WASM_EXPORT
+unsigned char* getVideoBufferOffset () {
+  return &video_buffer[0];
+}
+
+WASM_EXPORT
+unsigned char* getColorsOffset () {
+  return &colors[0];
 }
