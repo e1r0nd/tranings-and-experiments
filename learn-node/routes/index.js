@@ -21,4 +21,13 @@ router.get('/reverse/:name', (req, res) => {
 
   res.send(reverse);
 });
+
+router.get('/hello', (req, res) => {
+  const name = ` ${req.query.name}` || ' stranger';
+
+  res.render('hello', {
+    name,
+  });
+});
+
 module.exports = router;

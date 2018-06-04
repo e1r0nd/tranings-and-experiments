@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .wrapper
+        p Hello!
+        span You!!
+            - const upName = name.toUpperCase();
+            img(src="doc.jpg" alt=`name ${upName}`)
+
+    h2
+        | How
+        em  are you, #{name}?
