@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const storeController = require('../controllers/storeController');
 
 // Do work here
-router.get('/', (req, res) => {
+router.get('/', storeController.homePage);
+
+router.get('/hey', (req, res) => {
   console.log('Hey !!');
   // res.send('Hey! It works!');
   const name = req.query.name || 'wes';
