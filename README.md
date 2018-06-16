@@ -43,3 +43,7 @@ Wes Bos's Flex CSS tutorial http://flexbox.io
 
 **node-hero**
 Node hero tutorial by Risingstack https://risingstack.com/resources/node-hero
+
+**learn-node**
+Wes Bos' tutorial Learn Node https://learnnode.com
+
