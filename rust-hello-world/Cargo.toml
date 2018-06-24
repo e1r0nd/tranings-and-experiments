@@ -1,6 +1,6 @@
 [package]
-name = "rust1"
+name = "rust-hello-world"
 version = "0.1.0"
-authors = ["Anatol Merezhanyi <a.merezhanyi@gmail.com>"]
+authors = ["Anatol Merezhanyi"]
 
 [dependencies]
