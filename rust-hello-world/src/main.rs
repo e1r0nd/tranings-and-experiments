@@ -23,4 +23,17 @@ fn main() {
         z_size,
         z_size * 8
     );
+
+    let one_char = 'c';
+    let long_string = "just a string";
+    println!(
+        "One char = {} is {} bytes\nLong string = {} is {} bytes",
+        one_char,
+        mem::size_of_val(&one_char),
+        long_string,
+        mem::size_of_val(&long_string)
+    );
+
+    let true_or_false = 4 > 0;
+    println!("Is it true? {}", true_or_false);
 }
