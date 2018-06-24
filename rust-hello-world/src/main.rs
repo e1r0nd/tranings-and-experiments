@@ -1,3 +1,8 @@
+fn the_answer() -> u32 {
+    42
+}
 fn main() {
-    println!("Hello, world!");
+    let answer = the_answer();
+
+    println!("The answer is: {}", answer);
 }
