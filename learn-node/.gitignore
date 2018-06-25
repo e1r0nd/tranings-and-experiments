@@ -8,3 +8,4 @@ dist/
 variables.env
 variables.env.now
 *-lock.json
+.vscode/

@@ -1,8 +1,7 @@
-extend layout
+extends layout
 
 include mixins/_loginForm
 
 block content
   .inner
-    h1= title
-    +loginForm
+    +loginForm()

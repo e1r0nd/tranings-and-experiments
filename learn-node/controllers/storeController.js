@@ -8,12 +8,12 @@ const multerOptions = {
   storage: multer.memoryStorage(),
   fileFilter(req, file, next) {
     const isPhoto = file.mimetype.startsWith('image/');
-    if (isPhoto) {
+    if(isPhoto) {
       next(null, true);
     } else {
-      next({ message: "That filetype isn't allowed!" }, false);
+      next({ message: 'That filetype isn\'t allowed!' }, false);
     }
-  },
+  }
 };
 
 exports.homePage = (req, res) => {
@@ -43,11 +43,8 @@ exports.resize = async (req, res, next) => {
 };
 
 exports.createStore = async (req, res) => {
-  const store = await new Store(req.body).save();
-  req.flash(
-    'success',
-    `Successfully Created ${store.name}. Care to leave a review?`,
-  );
+  const store = await (new Store(req.body)).save();
+  req.flash('success', `Successfully Created ${store.name}. Care to leave a review?`);
   res.redirect(`/store/${store.slug}`);
 };
 
@@ -72,14 +69,9 @@ exports.updateStore = async (req, res) => {
   // find and update the store
   const store = await Store.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true, // return the new store instead of the old one
-    runValidators: true,
+    runValidators: true
   }).exec();
-  req.flash(
-    'success',
-    `Successfully updated <strong>${store.name}</strong>. <a href="/stores/${
-      store.slug
-    }">View Store →</a>`,
-  );
+  req.flash('success', `Successfully updated <strong>${store.name}</strong>. <a href="/stores/${store.slug}">View Store →</a>`);
   res.redirect(`/stores/${store._id}/edit`);
   // Redriect them the store and tell them it worked
 };
@@ -91,10 +83,13 @@ exports.getStoreBySlug = async (req, res, next) => {
 };
 
 exports.getStoresByTag = async (req, res) => {
-  const { tag } = req.params;
-  const tagQuery = tag || { $exists: true };
-  const tagsPromise = Store.getTagList();
-  const storePromise = Store.find({ tags: tagQuery });
-  const [tags, stores] = await Promise.all([tagsPromise, storePromise]);
-  res.render('tags', { tags, stores, tag });
+  const tag = req.params.tag;
+  const tagQuery = tag || { $exists: true, $ne: [] };
+
+  const tagsPromise = Store.getTagsList();
+  const storesPromise = Store.find({ tags: tagQuery });
+  const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
+
+
+  res.render('tag', { tags, title: 'Tags', tag, stores });
 };
