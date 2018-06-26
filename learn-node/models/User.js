@@ -13,13 +13,15 @@ const userSchema = new Schema({
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address'],
-    required: 'Please Supply an email address'
+    required: 'Please Supply an email address',
   },
   name: {
     type: String,
     required: 'Please supply a name',
-    trim: true
-  }
+    trim: true,
+  },
+  resetPasswordToken: String,
+  resetPasswordExpires: Number,
 });
 
 userSchema.virtual('gravatar').get(function() {
