@@ -54,7 +54,7 @@ exports.removeNote = (title) => {
 };
 
 exports.getAll = () => {
-  console.log('get all');
+  return fetchNotes();
 };
 
 exports.logNote = (note) => {

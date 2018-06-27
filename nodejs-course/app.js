@@ -17,7 +17,9 @@ if (command === 'add') {
     console.log(note);
   }
 } else if (command === 'list') {
-  notes.getAll();
+  const allNotes = notes.getAll();
+  console.log(`Found ${allNotes.length} notes:`);
+  allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'read') {
   const note = notes.getNote(argv.title);
   if (_.isObject(note)) {
