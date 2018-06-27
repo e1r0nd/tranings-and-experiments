@@ -11,18 +11,27 @@ console.log(`Command: ${command}`);
 if (command === 'add') {
   const note = notes.addNote(argv.title, argv.body);
   if (_.isObject(note)) {
-    console.log(`Note created
-------
-Title: ${note.title}`);
+    console.log('Note created');
+    notes.logNote(note);
   } else if (note) {
     console.log(note);
   }
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {
-  notes.getNote(argv.title);
+  const note = notes.getNote(argv.title);
+  if (_.isObject(note)) {
+    console.log('The Note');
+    notes.logNote(note);
+  } else {
+    console.log('Cannot find this note');
+  }
 } else if (command === 'remove') {
-  notes.removeNote(argv.title);
+  const noteRemoved = notes.removeNote(argv.title);
+  const message = noteRemoved
+    ? `Note "${argv.title} is removed`
+    : 'Note was not removed';
+  console.log(message);
 } else {
   console.log('Usage: app.js [add | list]');
 }

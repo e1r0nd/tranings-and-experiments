@@ -37,13 +37,28 @@ exports.addNote = (title, body) => {
 };
 
 exports.getNote = (title) => {
-  console.log(title);
+  if (!title) {
+    return;
+  }
+
+  const notes = fetchNotes();
+  return notes.filter((note) => note.title === title)[0];
 };
 
 exports.removeNote = (title) => {
-  console.log(title);
+  const notes = fetchNotes();
+  const filteredNotes = notes.filter((note) => note.title !== title);
+  saveNotes(filteredNotes);
+
+  return notes.length !== filteredNotes.length;
 };
 
 exports.getAll = () => {
   console.log('get all');
+};
+
+exports.logNote = (note) => {
+  console.log(`------
+Title: ${note.title}
+Body: ${note.body}`);
 };
