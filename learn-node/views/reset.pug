@@ -3,9 +3,9 @@ extends layout
 block content
   .inner
     form.form(method="POST")
-      h2= title
-      label(for="password") New Password
+      h2 Reset Your Password
+      label(for="password") Password
       input(type="password" name="password")
-      label(for="password-confirm") New Password
+      label(for="password-confirm") Confirm Password
       input(type="password" name="password-confirm")
-      input.button(type="submit" value="Reset you password")
+      input(type="submit" value="Reset Password →")

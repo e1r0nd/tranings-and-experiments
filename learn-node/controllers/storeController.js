@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
+const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
@@ -60,9 +61,10 @@ exports.getStores = async (req, res) => {
 
 const confirmOwner = (store, user) => {
   if (!store.author.equals(user._id)) {
-    throw Error('You are not an owner');
+    throw Error('You must own a store in order to edit it!');
   }
 };
+
 exports.editStore = async (req, res) => {
   // 1. Find the store given the ID
   const store = await Store.findOne({ _id: req.params.id });
@@ -110,15 +112,58 @@ exports.getStoresByTag = async (req, res) => {
 };
 
 exports.searchStores = async (req, res) => {
-  const stores = await Store.find(
-    {
-      $text: { $search: req.query.q },
-    },
-    { score: { $meta: 'textScore' } },
-  )
+  const stores = await Store
+    // first find stores that match
+    .find(
+      {
+        $text: {
+          $search: req.query.q,
+        },
+      },
+      {
+        score: { $meta: 'textScore' },
+      },
+    )
+    // the sort them
     .sort({
       score: { $meta: 'textScore' },
     })
+    // limit to only 5 results
     .limit(5);
   res.json(stores);
+};
+
+exports.mapStores = async (req, res) => {
+  const coordinates = [req.query.lng, req.query.lat].map(parseFloat);
+  const q = {
+    location: {
+      $near: {
+        $geometry: {
+          type: 'Point',
+          coordinates,
+        },
+        $maxDistance: 10000, // 10km
+      },
+    },
+  };
+
+  const stores = await Store.find(q)
+    .select('slug name description location photo')
+    .limit(10);
+  res.json(stores);
+};
+
+exports.mapPage = (req, res) => {
+  res.render('map', { title: 'Map' });
+};
+
+exports.heartStore = async (req, res) => {
+  const hearts = req.user.hearts.map(obj => obj.toString());
+  const operator = hearts.includes(req.params.id) ? '$pull' : '$addToSet';
+  const user = await User.findByIdAndUpdate(
+    req.user._id,
+    { [operator]: { hearts: req.params.id } },
+    { new: true },
+  );
+  res.json(user);
 };
