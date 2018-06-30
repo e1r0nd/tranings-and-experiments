@@ -1,5 +1,7 @@
 mod m2;
 mod rust1;
+mod rust2;
+mod rust3;
 
 fn main() {
     rust1::main1();
@@ -10,4 +12,8 @@ fn main() {
     println!("10^3 * PI = {}", cudeb_times_pi);
 
     m2::main_m2();
+
+    rust2::main2();
+
+    rust3::main3();
 }
