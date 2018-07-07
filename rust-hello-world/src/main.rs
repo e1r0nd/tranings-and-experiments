@@ -1,3 +1,4 @@
+mod arrays;
 mod enums;
 mod loops;
 mod option;
@@ -11,4 +12,5 @@ fn main() {
     enums::print_color();
     unions::unions();
     option::option();
+    arrays::array();
 }
