@@ -4,6 +4,7 @@ mod loops;
 mod option;
 mod sh;
 mod unions;
+mod vectors_and_slice;
 
 fn main() {
     sh::stack_and_heap();
@@ -13,4 +14,6 @@ fn main() {
     unions::unions();
     option::option();
     arrays::array();
+    vectors_and_slice::vectors();
+    vectors_and_slice::slices();
 }
