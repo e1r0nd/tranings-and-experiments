@@ -3,6 +3,7 @@ mod enums;
 mod loops;
 mod option;
 mod sh;
+mod strings;
 mod unions;
 mod vectors_and_slice;
 
@@ -16,4 +17,5 @@ fn main() {
     arrays::array();
     vectors_and_slice::vectors();
     vectors_and_slice::slices();
+    strings::strings();
 }
