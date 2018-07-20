@@ -20,3 +20,6 @@ fs.writeFileSync('notes.json', originalNoteString);
 const noteString = fs.readFileSync('notes.json');
 const note = JSON.parse(noteString);
 console.log(`title: ${note.title}`);
+
+const noteStringify = JSON.stringify(note, undefined, 2);
+console.log(`title: ${noteStringify}`);
