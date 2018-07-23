@@ -1,7 +1,9 @@
 mod arrays;
 mod enums;
+mod generics;
 mod loops;
 mod option;
+mod pm;
 mod sh;
 mod strings;
 mod tuples;
@@ -20,4 +22,6 @@ fn main() {
     vectors_and_slice::slices();
     strings::strings();
     tuples::tuples();
+    pm::pattern_matching();
+    generics::generics();
 }
