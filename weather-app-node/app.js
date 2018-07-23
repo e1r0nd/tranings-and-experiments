@@ -7,6 +7,14 @@ request(
     json: true,
   },
   (error, response, body) => {
-    console.log(body);
+    if (error) {
+      console.error(error.message);
+      return;
+    }
+
+    const results = body.results[0];
+    console.log(`Address: ${results.formatted_address}`);
+    console.log(`Latitude: ${results.geometry.location.lat}`);
+    console.log(`Longitude: ${results.geometry.location.lng}`);
   },
 );
