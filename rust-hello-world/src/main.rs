@@ -1,7 +1,9 @@
 mod arrays;
 mod enums;
 mod generics;
+mod hof;
 mod loops;
+mod methods;
 mod option;
 mod pm;
 mod sh;
@@ -9,6 +11,10 @@ mod strings;
 mod tuples;
 mod unions;
 mod vectors_and_slice;
+
+fn increase_value(x: &mut i32) {
+    *x += 1
+}
 
 fn main() {
     sh::stack_and_heap();
@@ -24,4 +30,12 @@ fn main() {
     tuples::tuples();
     pm::pattern_matching();
     generics::generics();
+
+    let mut z: i32 = 0;
+    println!("before: {}", z);
+    increase_value(&mut z);
+    println!("after: {}", z);
+
+    methods::methods();
+    hof::hof();
 }
