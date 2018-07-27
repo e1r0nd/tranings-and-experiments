@@ -1,4 +1,5 @@
 mod arrays;
+mod dispatch;
 mod enums;
 mod generics;
 mod hof;
@@ -8,6 +9,7 @@ mod option;
 mod pm;
 mod sh;
 mod strings;
+mod traits;
 mod tuples;
 mod unions;
 mod vectors_and_slice;
@@ -38,4 +40,7 @@ fn main() {
 
     methods::methods();
     hof::hof();
+
+    traits::traits();
+    dispatch::dispatch();
 }
