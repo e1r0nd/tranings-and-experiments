@@ -3,6 +3,7 @@ mod dispatch;
 mod enums;
 mod generics;
 mod hof;
+mod lifetime;
 mod loops;
 mod methods;
 mod option;
@@ -43,4 +44,5 @@ fn main() {
 
     traits::traits();
     dispatch::dispatch();
+    lifetime::lifetime();
 }
