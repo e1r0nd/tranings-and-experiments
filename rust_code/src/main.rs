@@ -1,4 +1,5 @@
 mod m2;
+mod m4;
 mod rust1;
 mod rust2;
 mod rust3;
@@ -16,4 +17,6 @@ fn main() {
     rust2::main2();
 
     rust3::main3();
+
+    m4::main_m4();
 }
