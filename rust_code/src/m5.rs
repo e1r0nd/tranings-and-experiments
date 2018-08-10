@@ -42,3 +42,17 @@ pub fn main() {
     let point = Point { x: 0.3, y: 0.4 };
     println!("point: {}, {}", point.x, point.y);
 }
+
+pub fn closures() {
+    println!("------- Closures -------");
+    let var_minus_1 = |x: i32| x - 1;
+    let plus_two = |x: i32| {
+        let mut result: i32 = x;
+        result += 1;
+        result += 1;
+        result
+    };
+
+    println!("var_minus_1(10): {}", var_minus_1(10));
+    println!("plus_two(10): {}", plus_two(10));
+}

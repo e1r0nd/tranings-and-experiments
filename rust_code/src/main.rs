@@ -1,9 +1,11 @@
 mod m2;
 mod m4;
 mod m5;
+mod m6;
 mod rust1;
 mod rust2;
 mod rust3;
+mod rust5;
 
 fn main() {
     rust1::main1();
@@ -22,4 +24,10 @@ fn main() {
     m4::main_m4();
 
     m5::main();
+
+    rust5::main();
+
+    m5::closures();
+
+    m6::main();
 }
