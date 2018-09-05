@@ -2,37 +2,37 @@
 
 just for fun
 
-**start**<br>
+**start**
 node course http://learn.javascript.ru/courses/nodejs
 
-**node-server**<br>
+**node-server**
 node server http://learn.javascript.ru/courses/nodejs
 
-**JavaScript30**<br>
+**JavaScript30**
 Native JavaScript course https://javascript30.com/
 
-**oop**<br>
+**oop**
 OOP in JS http://learn.javascript.ru/oop
 
-**canvas**<br>
+**canvas**
 Playing with Canvas
 
-**firebase-todos**<br>
+**firebase-todos**
 Serverless Application using Google Firebase. Based on jQuery TodoMVC.
 
-**es6-babel-grunt**<br>
+**es6-babel-grunt**
 babel + grunt - minimal
 
-**removeDups.js**<br>
+**removeDups.js**
 Remove duplicated elements in two arrays
 
-**data-structures**<br>
+**data-structures**
 Data Sructures in JavaScript
 
-**redux-remake**<br>
+**redux-remake**
 Redux tutorial https://www.youtube.com/playlist?list=PLqHlAwsJRxANFIgAf7BO8hNYdvipLERxQ
 
-**react-intro**<br>
+**react-intro**
 React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKdYGv1CDRUOl
 
 **hello-world**
