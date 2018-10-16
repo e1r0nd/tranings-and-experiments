@@ -47,3 +47,5 @@ Node hero tutorial by Risingstack https://risingstack.com/resources/node-hero
 **learn-node**
 Wes Bos' tutorial Learn Node https://learnnode.com
 
+**rust_code**
+"The Rust Programming Language" tutorial from https://www.udemy.com/the-rust-programming-language/
