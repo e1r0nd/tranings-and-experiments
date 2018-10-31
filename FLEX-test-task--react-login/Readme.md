@@ -14,6 +14,7 @@
 # Notes
 
 - Task Description has incorrect endpoints
+- Error text: `Username "asd" is already taken` is good for UX but is bad for security - it's an opportunity for bruteforce attack.
 - Achieved Lighthouse results:
   - Performance 100%
   - PWA 46% (out of scope)
