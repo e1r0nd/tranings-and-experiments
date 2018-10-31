@@ -1,6 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
-// Routes related to trades
+const router = express.Router();
+const data = require('../json-examples/get-trades-user.json');
+
+router.get('/', (req, res) => {
+  res.set('Cached-Control', 'public, max-age=300, s-maxage=600');
+  res.json(data);
+});
 
 module.exports = router;

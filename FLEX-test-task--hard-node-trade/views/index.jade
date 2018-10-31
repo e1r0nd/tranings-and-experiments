@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Stock Trades API
+  h2 The REST service are:
+  ul
+    li Erasing all the trades: DELETE at <em>/erase</em>
+    li Adding new trades: POST at <em>/trades</em>
+    li Returning all the trades: GET at <em>/trades</em>
+    li Returning the trade records filtered by the user ID: GET at <em>at /trades/users/{userID}</em>
+    li Returning the highest and lowest price for the stock symbol in the given date range: GET at <em>/stocks/{stockSymbol}/price?start={startDate}&end={endDate}</em>
+    li Returning the fluctuations count, maximum daily rise and maximum daily fall for each stock symbol for the period in the given date range: GET at <em>/stocks/stats?start={startDate}&end={endDate}</em>
+  h2 Sample Series of Requests
+  ul
+    li POST /trades
+    li GET /trades/users/1
+    li GET /stocks/ACC/price?start=2014-06-25&end=2014-06-26
+    li GET /stocks/stats?start=2014-06-14&end=2014-06-26
+    li GET /stocks/stats?start=2014-06-14&end=2014-06-27
+    

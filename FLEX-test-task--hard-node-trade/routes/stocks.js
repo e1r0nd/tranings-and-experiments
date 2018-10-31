@@ -1,6 +1,4 @@
-var express = require('express');
-var router = express.Router();
-
-// Routes related to stocks
+const express = require('express');
+const router = express.Router();
 
 module.exports = router;
