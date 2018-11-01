@@ -9,8 +9,8 @@
     "start": "node ./bin/www",
     "test": "./node_modules/.bin/mocha test",
     "dev": "nodemon ./bin/www --ignore public/",
-    "sample": "node ./data/load-sample-data.js",
-    "sample:delete": "node ./data/load-sample-data.js --delete"
+    "sample": "node ./json-examples/load-sample-data.js",
+    "sample:delete": "node ./json-examples/load-sample-data.js --delete"
   },
   "dependencies": {
     "acorn": "^6.0.2",
