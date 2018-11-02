@@ -9,7 +9,7 @@ class YTSearch extends Component {
 
     this.state = {
       videoIds: [],
-      API_KEY: 'AIzaSyDwFYf1aCr3F_DllkLTP4L77nDpP6oxnts',
+      API_KEY: 'put-your-google-API-here',
       location: '59.95307,30.33427',
     };
   }

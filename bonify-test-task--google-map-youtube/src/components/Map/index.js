@@ -27,7 +27,7 @@ class Map extends Component {
     return (
       <div className="map__wrapper">
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDwFYf1aCr3F_DllkLTP4L77nDpP6oxnts' }}
+          bootstrapURLKeys={{ key: 'put-your-google-API-here' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           onClick={(e) => this.clickHandler(e, e)}
