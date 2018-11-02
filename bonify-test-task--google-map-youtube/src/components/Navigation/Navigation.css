@@ -1,0 +1,23 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.navigation__itm {
+  width: 50%;
+}
+.navigation__btn {
+  background: grey;
+  width: 80%;
+  height: 100%;
+  border: none;
+  color: black;
+}
+.navigation__btn:hover {
+  background: darkgray;
+}
+.navigation__btn:disabled {
+  background: aqua;
+  color: darkgrey;
+}

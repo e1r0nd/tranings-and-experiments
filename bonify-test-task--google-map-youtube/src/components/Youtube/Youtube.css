@@ -1,0 +1,15 @@
+.youtube__wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 50%;
+  height: 95vh;
+  overflow-y: scroll;
+}
+
+.youtube__tile {
+  width: 100%;
+  margin: 0 auto;
+}

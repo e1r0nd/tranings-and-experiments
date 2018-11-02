@@ -1,0 +1,7 @@
+.app {
+  text-align: center;
+}
+.app__main {
+  display: flex;
+  flex-direction: row;
+}
