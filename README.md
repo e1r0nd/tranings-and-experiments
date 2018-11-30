@@ -49,3 +49,6 @@ Wes Bos' tutorial Learn Node https://learnnode.com
 
 **rust_code**
 "The Rust Programming Language" tutorial from https://www.udemy.com/the-rust-programming-language/
+
+**rust-hello-world**
+"The Rust Programming Language" https://www.udemy.com/rust-lang/
