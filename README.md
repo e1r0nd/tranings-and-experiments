@@ -52,3 +52,9 @@ Wes Bos' tutorial Learn Node https://learnnode.com
 
 **rust-hello-world**
 "The Rust Programming Language" https://www.udemy.com/rust-lang/
+
+**weather-app-node**
+"The Complete Node.js Developer Course (2nd Edition)": Section: 4. Asynchronous Node.js (Weather App) https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/content
+
+**note-app**
+"The Complete Node.js Developer Course (2nd Edition)": Section: 3. Node.js Fundamentals (Note App) https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/content
