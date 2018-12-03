@@ -61,3 +61,7 @@ Wes Bos' tutorial Learn Node https://learnnode.com
 
 **python-learning**
 "Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
+
+**sick-fits--wesbos-advanced-react**
+"Fullstack Advanced React and GraphQL"
+https://advancedreact.com/
