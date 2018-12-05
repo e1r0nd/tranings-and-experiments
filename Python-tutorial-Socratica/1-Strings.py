@@ -1,7 +1,7 @@
 message = "I'm here. Meet me tonight."
 print(message)
 
-message2 = 'The clock strikes at midnight.'
+message2 = "The clock strikes at midnight."
 print(message2)
 
 message3 = """One more time.
