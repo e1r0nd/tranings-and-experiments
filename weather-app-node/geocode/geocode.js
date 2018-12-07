@@ -1,5 +1,5 @@
 const request = require('request');
-const mapAPI = require('./key').mapAPI; // Google Map API Key
+const mapAPI = require('../key').mapAPI; // Google Map API Key
 
 const geocodeAddress = function(address, callback) {
   const encodedAddress = encodeURIComponent(address) || 'Krucza%2073%20Wroclaw';
