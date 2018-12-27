@@ -7,11 +7,10 @@
 </head>
 
 <body>
-    <h1>{{title}}</h1>
-    <p>It's me.</p>
-    <footer>
-        <p>Copyleft {{year}}</p>
-    </footer>
+    {{> header}}
+    <p>One more {{screamIt 'totally useless'}} page.</p>
+
+    {{> footer}}
 </body>
 
 </html>

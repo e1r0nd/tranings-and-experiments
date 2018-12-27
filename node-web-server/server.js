@@ -2,8 +2,11 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
+hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
+hbs.registerHelper('screamIt', (text) => text.toUpperCase());
 
 app.get('/json', (req, res) => {
   res.send({
@@ -14,7 +17,11 @@ app.get('/json', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     title: 'About Page',
-    year: new Date().getFullYear(),
+  });
+});
+app.get('/help', (req, res) => {
+  res.render('help.hbs', {
+    title: 'Help Page',
   });
 });
 app.listen(3000, () => {
