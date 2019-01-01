@@ -15,3 +15,29 @@ button.onclick = function () {
 };
 document.body.appendChild(button);
 console.log('It works!');
+var str = 'str';
+// str = 28; <- cannot be Number
+var hasBool = false;
+// hasBool = 1; <- has to be Boolean
+var myAge;
+myAge = 42;
+// myAge = '42'; <- cannot be reassigned
+// array
+var hobbies = ['Ski', 'Dance', 'Fly'];
+hobbies.push('Swimming');
+// hobbies.push(42); <- cannot push Number
+var anything = ['Ski'];
+anything.push('Swimming');
+anything.push(42); // no error is here
+// tuples
+var address = ['Abc str.', 42];
+// address = [32, 42]; <- not valid
+// enum
+var Color;
+(function (Color) {
+    Color[Color["Gray"] = 0] = "Gray";
+    Color[Color["Green"] = 100] = "Green";
+    Color[Color["Blue"] = 101] = "Blue";
+})(Color || (Color = {}));
+var myColor = Color.Green;
+console.log(myColor); // -> 100
