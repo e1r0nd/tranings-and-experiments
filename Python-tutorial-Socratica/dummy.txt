@@ -1,0 +1,6 @@
+Reading and writing text files is an essential programming skill.  Python gives you a simple and powerful tool for working with text files: the open function.  This lets you open a wide variety of files - both text or binary - in many different modes (read, write and append).  Today we will show you how to read and write text files, and show you several ways to accomplish each task.
+
+We'd like to recognize our VIP Patrons who sponsored this video on Patreon!  Our sincere thanks to Birds Eat Bees, Andrew Mengede, Markie Waid, and Carlos Araujo.  Your generous donation helps make these videos happen! 
+
+-------------
+To learn Python, you can watch our playlist from the beginning
