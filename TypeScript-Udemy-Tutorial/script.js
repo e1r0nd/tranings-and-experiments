@@ -1,19 +1,4 @@
 "use strict";
-// function Greeter(greeting: string) {
-//   // this.greeting = greeting;
-// }
-// Greeter.prototype.greet = function() {
-//   return 'Hello, ' + this.greeting;
-// };
-// Oops, we're passing an object when we want a string. This will print
-// "Hello, [object Object]" instead of "Hello, world" without error.
-// let greeter = new Greeter('world');
-// let button = document.createElement('button');
-// button.textContent = 'Say Hello';
-// button.onclick = function() {
-//   alert(greeter.greet());
-// };
-// document.body.appendChild(button);
 console.log('It works!');
 var str = 'str';
 // str = 28; <- cannot be Number
@@ -58,6 +43,9 @@ var myMultiplier;
 // myMultiplier = hello; <- not valid
 myMultiplier = multiplier;
 console.log(myMultiplier(3, 4));
+function neverReturns() {
+    throw new Error('oops');
+}
 // Objects
 var userData = {
     name: 'Some',
@@ -83,7 +71,14 @@ var complex1 = {
 // union types
 var yourNumber = 42;
 yourNumber = '42';
-// yourNumber = true; <- not valid
+// yourNumber = true; // <- not valid
 if (typeof yourNumber == 'string') {
     console.log(yourNumber);
 }
+// Nullable Types
+var canBeNull = 12;
+canBeNull = null;
+var isUndefined;
+isUndefined = null; // <- can be null
+isUndefined = 42; // because it's defined as 'any'
+//# sourceMappingURL=script.js.map

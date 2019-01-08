@@ -69,6 +69,7 @@ let userData: { name: string; age: number } = {
 let complex: { data: number[]; output: (all: boolean) => number[] } = {
   data: [3, 2, 1],
   output: function(all: boolean): number[] {
+    console.log('all:', all);
     return this.data;
   },
 };
@@ -78,6 +79,7 @@ type ComplexType = { data: number[]; output: (all: boolean) => number[] };
 let complex1: ComplexType = {
   data: [3, 2, 1],
   output: function(all: boolean): number[] {
+    console.log('all:', all);
     return this.data;
   },
 };
@@ -85,7 +87,7 @@ let complex1: ComplexType = {
 // union types
 let yourNumber: number | string = 42;
 yourNumber = '42';
-// yourNumber = true; <- not valid
+// yourNumber = true; // <- not valid
 
 if (typeof yourNumber == 'string') {
   console.log(yourNumber);
