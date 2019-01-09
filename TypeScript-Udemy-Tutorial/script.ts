@@ -99,3 +99,15 @@ canBeNull = null;
 let isUndefined;
 isUndefined = null; // <- can be null
 isUndefined = 42; // because it's defined as 'any'
+
+const countdown = (start: number = 10, end: number = start - 1): void => {
+  if (start > 0) {
+    start -= 1;
+  } else {
+    console.log('Done!');
+  }
+  console.log('end:', end);
+};
+countdown(0);
+console.log('Count this:');
+countdown();

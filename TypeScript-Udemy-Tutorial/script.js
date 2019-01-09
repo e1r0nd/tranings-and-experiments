@@ -59,12 +59,14 @@ var userData = {
 var complex = {
     data: [3, 2, 1],
     output: function (all) {
+        console.log('all:', all);
         return this.data;
     },
 };
 var complex1 = {
     data: [3, 2, 1],
     output: function (all) {
+        console.log('all:', all);
         return this.data;
     },
 };
@@ -81,4 +83,18 @@ canBeNull = null;
 var isUndefined;
 isUndefined = null; // <- can be null
 isUndefined = 42; // because it's defined as 'any'
+var countdown = function (start, end) {
+    if (start === void 0) { start = 10; }
+    if (end === void 0) { end = start - 1; }
+    if (start > 0) {
+        start -= 1;
+    }
+    else {
+        console.log('Done!');
+    }
+    console.log('end:', end);
+};
+countdown(0);
+console.log('Count this:');
+countdown();
 //# sourceMappingURL=script.js.map
