@@ -111,3 +111,8 @@ const countdown = (start: number = 10, end: number = start - 1): void => {
 countdown(0);
 console.log('Count this:');
 countdown();
+
+function printInfo(...info: [string, number]) {
+  console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}
+console.log(printInfo('Max', 42));

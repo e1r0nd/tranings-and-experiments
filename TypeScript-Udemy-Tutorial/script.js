@@ -97,4 +97,12 @@ var countdown = function (start, end) {
 countdown(0);
 console.log('Count this:');
 countdown();
+function printInfo() {
+    var info = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        info[_i] = arguments[_i];
+    }
+    console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}
+console.log(printInfo('Max', 42));
 //# sourceMappingURL=script.js.map
