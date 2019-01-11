@@ -105,4 +105,29 @@ function printInfo() {
     console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
 }
 console.log(printInfo('Max', 42));
+// Classes
+var Person = /** @class */ (function () {
+    function Person(name, userName) {
+        this.userName = userName;
+        this.age = 42;
+        this.name = name;
+        this.type = 'user';
+    }
+    Person.prototype.printAge = function () {
+        console.log(this.age);
+    };
+    Person.prototype.setType = function (type) {
+        this.type = type;
+        console.log(this.type);
+    };
+    Person.prototype.getType = function () {
+        console.log(this.type);
+    };
+    return Person;
+}());
+var person = new Person('Max', 'max01');
+console.log(person /* person.type - is not accessible*/);
+person.printAge();
+// person.setType('user'); // is private
+person.getType();
 //# sourceMappingURL=script.js.map

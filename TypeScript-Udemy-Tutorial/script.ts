@@ -116,3 +116,33 @@ function printInfo(...info: [string, number]) {
   console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
 }
 console.log(printInfo('Max', 42));
+
+// Classes
+class Person {
+  public name: string;
+  // public userName: string; // copied from constructor
+  private type: string;
+  protected age: number = 42;
+
+  constructor(name: string, public userName: string) {
+    this.name = name;
+    this.type = 'user';
+  }
+
+  printAge(): void {
+    console.log(this.age);
+  }
+  private setType(type: string): void {
+    this.type = type;
+    console.log(this.type);
+  }
+  getType(): void {
+    console.log(this.type);
+  }
+}
+
+const person = new Person('Max', 'max01');
+console.log(person /* person.type - is not accessible*/);
+person.printAge();
+// person.setType('user'); // is private
+person.getType();
