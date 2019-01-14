@@ -146,3 +146,82 @@ console.log(person /* person.type - is not accessible*/);
 person.printAge();
 // person.setType('user'); // is private
 person.getType();
+
+// Inheritance
+class Max extends Person {
+  constructor(userName: string) {
+    super('Max', userName);
+    this.age = 15;
+  }
+}
+const personMax = new Max('any');
+console.log(personMax);
+
+// Getters & Setters
+class Plant {
+  private _species: string = 'Default';
+
+  get species() {
+    return this._species;
+  }
+  set species(value: string) {
+    if (value.length > 3) {
+      this._species = value;
+    } else {
+      this._species = 'Default';
+    }
+  }
+}
+
+let plant = new Plant();
+console.log(plant.species);
+plant.species = 'Green plant';
+console.log(plant.species);
+
+// Static properties and Methods
+class Helpers {
+  static PI: number = 3.14;
+  static calc(diameter: number): number {
+    return this.PI * diameter;
+  }
+}
+console.log(Helpers.PI);
+console.log(Helpers.calc(8));
+
+// Abstract Classes
+abstract class Project {
+  projectName: string = 'Default';
+  budget: number = 0;
+
+  abstract changeProjectName(name: string): void;
+
+  calcBudget() {
+    return this.budget * 2;
+  }
+}
+
+class ITProject extends Project {
+  changeProjectName(name: string): void {
+    this.projectName = name;
+  }
+}
+
+let newProject = new ITProject();
+console.log(newProject);
+newProject.projectName = 'IT Project';
+console.log(newProject);
+
+// static constructor - For Singleton
+class OnlyOne {
+  private static instance: OnlyOne;
+  private constructor(public name: string) {}
+  static getInstance() {
+    if (!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('The Only One');
+    }
+    return OnlyOne.instance;
+  }
+}
+//let wrong = new OnlyOne('Oopss'); // don't do that
+let right = OnlyOne.getInstance(); // the right way
+console.log(right);

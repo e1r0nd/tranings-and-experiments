@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 console.log('It works!');
 var str = 'str';
 // str = 28; <- cannot be Number
@@ -130,4 +143,95 @@ console.log(person /* person.type - is not accessible*/);
 person.printAge();
 // person.setType('user'); // is private
 person.getType();
+// Inheritance
+var Max = /** @class */ (function (_super) {
+    __extends(Max, _super);
+    function Max(userName) {
+        var _this = _super.call(this, 'Max', userName) || this;
+        _this.age = 15;
+        return _this;
+    }
+    return Max;
+}(Person));
+var personMax = new Max('any');
+console.log(personMax);
+// Getters & Setters
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = 'Default';
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = 'Default';
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+console.log(plant.species);
+plant.species = 'Green plant';
+console.log(plant.species);
+// Static properties and Methods
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    Helpers.calc = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+console.log(Helpers.PI);
+console.log(Helpers.calc(8));
+// Abstract Classes
+var Project = /** @class */ (function () {
+    function Project() {
+        this.projectName = 'Default';
+        this.budget = 0;
+    }
+    Project.prototype.calcBudget = function () {
+        return this.budget * 2;
+    };
+    return Project;
+}());
+var ITProject = /** @class */ (function (_super) {
+    __extends(ITProject, _super);
+    function ITProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ITProject.prototype.changeProjectName = function (name) {
+        this.projectName = name;
+    };
+    return ITProject;
+}(Project));
+var newProject = new ITProject();
+console.log(newProject);
+newProject.projectName = 'IT Project';
+console.log(newProject);
+// static constructor - For Singleton
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The Only One');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+//let wrong = new OnlyOne('Oopss'); // don't do that
+var right = OnlyOne.getInstance(); // the right way
+console.log(right);
 //# sourceMappingURL=script.js.map
