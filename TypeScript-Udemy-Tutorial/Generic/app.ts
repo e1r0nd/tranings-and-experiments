@@ -1,80 +1,44 @@
-console.log('--- Interfaces ---');
-interface NamedPerson {
-  [propName: string]: string | number | undefined;
-  name: string;
-  age?: number;
-  type?: string;
-}
-interface YammingPerson {
-  name: string;
-  sayHello(what: string): void;
-}
-function greet(person: NamedPerson) {
-  console.log(`Hello, ${person.name}`);
-}
-function changeName(person: NamedPerson, newName: string) {
-  person.name = newName;
+console.log('--- Generics ---');
+// Simple Generic
+function echo(data: any) {
+  return data;
 }
 
-const someone = {
-  name: 'Max',
-  age: 42,
-};
+console.log(echo('Test String'));
+console.log(echo(42));
 
-greet(someone);
-changeName(someone, 'Anna');
-greet(someone);
-greet({
-  name: 'Sam',
-  age: 42,
-  type: 'user',
-});
-
-const namedPerson: NamedPerson = {
-  name: 'newPerson',
-  age: -1,
-  // hobbies: ['sports', 'spelling'], //<- an array is not described in the Interface
-  hobby: 'sleeping',
-};
-
-const newPerson: YammingPerson = {
-  name: 'newPerson',
-  sayHello(what: string) {
-    console.log(`${name} says ${what}`);
-  },
-};
-
-newPerson.sayHello('=)');
-
-// --- Classes ---
-interface User {
-  name: string;
-  age: number;
-  type?: string;
+// Better Generic
+function betterEcho<T>(data: T) {
+  return data;
 }
-class SuperUser implements User {
-  name: string = '';
-  age: number = 0;
-  uid: number = -1;
-}
-const myUser = new SuperUser();
-myUser.name = 'admin';
-myUser.uid = 999;
-console.log(myUser);
+console.log(betterEcho('test'));
+//console.log(betterEcho<number>('42')); // <- doesn't work
 
-// --- Function types ---
-interface DoubleValueFunc {
-  (a: number, b: number): number;
-}
-const accumulator: DoubleValueFunc = (a: number, b: number): number => a + b;
-console.log(`Sum of 2 and 3 = ${accumulator(2, 3)}`);
+// Built-in Generics
+const results: Array<number> = [1, 2.3];
+results.push(0);
+// results.push('a'); // <- doen't work
 
-// -- Interface inheritance
-interface AgedPerson extends NamedPerson {
-  age: number;
+// Arrays
+function printAll<T>(args: T[]) {
+  args.forEach((element) => console.log(element));
 }
-const oldGranny: AgedPerson = {
-  name: 'Suzi',
-  age: 90,
-};
-console.log(oldGranny);
+printAll<string>(['apple', 'banana']);
+
+// Generic Types
+const echo2: <T>(data: T) => T = betterEcho;
+console.log(echo2<string>('Some thin G'));
+
+// Generic Class
+class SimpleMath<T extends number | string, U extends number | bigint> {
+  // ! postfix - ignore "strictPropertyInitialization": true
+  baseValue!: T;
+  multipyValue!: U;
+  calculate(): number {
+    return +this.baseValue * +this.multipyValue;
+  }
+}
+const multiply = new SimpleMath<string, number>();
+multiply.baseValue = '10';
+multiply.multipyValue = 20;
+console.log(multiply.calculate());
