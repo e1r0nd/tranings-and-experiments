@@ -1,40 +1,21 @@
 "use strict";
-console.log('--- Generics ---');
-// Simple Generic
-function echo(data) {
-    return data;
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+console.log('--- Decorators ---');
+function logged(constructorFn) {
+    console.log(constructorFn);
 }
-console.log(echo('Test String'));
-console.log(echo(42));
-// Better Generic
-function betterEcho(data) {
-    return data;
-}
-console.log(betterEcho('test'));
-//console.log(betterEcho<number>('42')); // <- doesn't work
-// Built-in Generics
-var results = [1, 2.3];
-results.push(0);
-// results.push('a'); // <- doen't work
-// Arrays
-function printAll(args) {
-    args.forEach(function (element) { return console.log(element); });
-}
-printAll(['apple', 'banana']);
-// Generic Types
-var echo2 = betterEcho;
-console.log(echo2('Some thin G'));
-// Generic Class
-var SimpleMath = /** @class */ (function () {
-    function SimpleMath() {
+var Person = /** @class */ (function () {
+    function Person() {
+        console.log('hi!');
     }
-    SimpleMath.prototype.calculate = function () {
-        return +this.baseValue * +this.multipyValue;
-    };
-    return SimpleMath;
+    Person = __decorate([
+        logged
+    ], Person);
+    return Person;
 }());
-var multiply = new SimpleMath();
-multiply.baseValue = '10';
-multiply.multipyValue = 20;
-console.log(multiply.calculate());
 //# sourceMappingURL=app.js.map
