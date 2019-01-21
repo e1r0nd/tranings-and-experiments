@@ -1,6 +1,6 @@
-import Nav from './Nav';
-import Link from 'next/link';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import Link from 'next/link';
+import Nav from './Nav';
 
 const Logo = styled.h1`
   font-size: 4rem;
