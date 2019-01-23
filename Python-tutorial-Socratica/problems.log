@@ -1,3 +1,0 @@
-INFO:root:Time required for google_stock_data.csv = 0.006974458694458008
-ERROR:root:[Errno 2] No such file or directory: 'google_stock_data.csv1'
-INFO:root:Time required for google_stock_data.csv1 = 0.0
