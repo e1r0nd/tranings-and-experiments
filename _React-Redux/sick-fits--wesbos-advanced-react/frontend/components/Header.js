@@ -1,6 +1,19 @@
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Link from 'next/link';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 import Nav from './Nav';
+
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+Router.onRouteChangeError = () => {
+  console.error('Loading a router error!');
+  NProgress.done();
+};
 
 const Logo = styled.h1`
   font-size: 4rem;

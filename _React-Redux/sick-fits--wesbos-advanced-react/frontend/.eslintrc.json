@@ -13,6 +13,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console": "off"
   }
 }
