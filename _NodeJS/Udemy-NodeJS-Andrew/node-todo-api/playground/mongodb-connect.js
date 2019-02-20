@@ -1,5 +1,8 @@
 require('dotenv').config();
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient, ObjectID } = require('mongodb');
+const obj = new ObjectID();
+console.log(obj);
+
 console.log(
   `${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}`,
 );
