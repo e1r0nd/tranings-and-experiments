@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.2.0",
-    "mongodb": "^2.2.5"
+    "mongodb": "^2.2.5",
+    "mongoose": "^4.13.18"
   }
 }
