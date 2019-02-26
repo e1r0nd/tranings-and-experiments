@@ -12,9 +12,9 @@ mongoose.connect(
 );
 
 const Todo = mongoose.model('Todo', {
-  text: { type: String },
-  completed: { type: Boolean },
-  completedAt: { type: Number },
+  text: { type: String, required: true, minlength: 1, trim: true },
+  completed: { type: Boolean, default: false },
+  completedAt: { type: Number, default: null },
 });
 
 const newTodo = new Todo({
@@ -40,5 +40,25 @@ anotherTodo.save().then(
   },
   (err) => {
     console.log('Unable to save a todo', err);
+  },
+);
+
+const User = mongoose.model('User', {
+  email: {
+    type: String,
+    require: true,
+    trim: true,
+    minlength: 1,
+  },
+});
+const user = new User({
+  email: 'andrew@mail.com',
+});
+user.save().then(
+  (doc) => {
+    console.log('User saved:', doc);
+  },
+  (e) => {
+    console.log('Unable to save a user', e);
   },
 );
