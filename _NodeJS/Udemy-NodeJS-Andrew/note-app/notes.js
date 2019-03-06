@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 const fetchNotes = () => {
   try {
@@ -59,6 +60,6 @@ exports.getAll = () => {
 
 exports.logNote = (note) => {
   console.log(`------
-Title: ${note.title}
-Body: ${note.body}`);
+${chalk.green('Title:')} ${note.title}
+${chalk.blue('Body:')} ${note.body}`);
 };

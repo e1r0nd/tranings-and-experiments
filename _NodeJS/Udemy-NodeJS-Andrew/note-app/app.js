@@ -1,6 +1,7 @@
 const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
+const chalk = require('chalk');
 
 const notes = require('./notes.js');
 const titleOptions = {
@@ -30,14 +31,14 @@ const command = (argv._[0] && argv._[0].toLowerCase()) || '?';
 if (command === 'add') {
   const note = notes.addNote(argv.title, argv.body);
   if (_.isObject(note)) {
-    console.log('Note created');
+    console.log(chalk.green('Note created'));
     notes.logNote(note);
   } else if (note) {
     console.log(note);
   }
 } else if (command === 'list') {
   const allNotes = notes.getAll();
-  console.log(`Found ${allNotes.length} notes:`);
+  console.log(`Found ${chalk.yellow(allNotes.length)} notes:`);
   allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'read') {
   const note = notes.getNote(argv.title);
@@ -45,14 +46,14 @@ if (command === 'add') {
     console.log('The Note');
     notes.logNote(note);
   } else {
-    console.log('Cannot find this note');
+    console.log(chalk.red('Cannot find this note'));
   }
 } else if (command === 'remove') {
   const noteRemoved = notes.removeNote(argv.title);
   const message = noteRemoved
-    ? `Note "${argv.title} is removed`
+    ? `Note "${chalk.red(argv.title)} is removed`
     : 'Note was not removed';
   console.log(message);
 } else {
-  console.log('Usage: app.js [add | list | remove | --help]');
+  console.log(`Usage: app.js ${chalk.green('[add | list | remove | --help]')}`);
 }
