@@ -4,6 +4,10 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 
 const notes = require('./notes.js');
+
+// Customize version
+yargs.version('0.1.0');
+
 const titleOptions = {
   describe: 'Title of note',
   demand: true,
