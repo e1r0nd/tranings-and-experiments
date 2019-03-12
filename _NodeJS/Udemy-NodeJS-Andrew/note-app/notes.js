@@ -13,7 +13,7 @@ const saveNotes = (notes) => {
   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 };
 
-exports.addNote = (title, body) => {
+const addNote = (title, body) => {
   if (!title) {
     return 'Enter the title';
   } else if (!body) {
@@ -37,7 +37,7 @@ exports.addNote = (title, body) => {
   }
 };
 
-exports.getNote = (title) => {
+const getNote = (title) => {
   if (!title) {
     return;
   }
@@ -46,7 +46,7 @@ exports.getNote = (title) => {
   return notes.filter((note) => note.title === title)[0];
 };
 
-exports.removeNote = (title) => {
+const removeNote = (title) => {
   const notes = fetchNotes();
   const filteredNotes = notes.filter((note) => note.title !== title);
   saveNotes(filteredNotes);
@@ -54,12 +54,20 @@ exports.removeNote = (title) => {
   return notes.length !== filteredNotes.length;
 };
 
-exports.getAll = () => {
+const getAll = () => {
   return fetchNotes();
 };
 
-exports.logNote = (note) => {
+const logNote = (note) => {
   console.log(`------
 ${chalk.green('Title:')} ${note.title}
 ${chalk.blue('Body:')} ${note.body}`);
+};
+
+module.exports = {
+  addNote,
+  logNote,
+  getAll,
+  removeNote,
+  getNote,
 };
