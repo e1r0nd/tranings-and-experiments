@@ -26,14 +26,14 @@ const addNote = (title, body) => {
     body,
   };
 
-  const duplicateNotes = notes.filter((note) => note.title === title);
+  const duplicateNote = notes.find((note) => note.title === title);
 
-  if (duplicateNotes.length === 0) {
+  if (!duplicateNote) {
     notes.push(note);
     saveNotes(notes);
     return note;
   } else {
-    return 'The title is duplicated';
+    return chalk.yellow(`The title "${chalk.red(title)}" is duplicated`);
   }
 };
 
