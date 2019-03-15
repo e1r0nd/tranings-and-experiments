@@ -48,6 +48,7 @@ const getNote = (title) => {
 
 const removeNote = (title) => {
   const notes = fetchNotes();
+  console.log(`Title: ${chalk.yellow(title)}`);
   const filteredNotes = notes.filter((note) => note.title !== title);
   saveNotes(filteredNotes);
 
