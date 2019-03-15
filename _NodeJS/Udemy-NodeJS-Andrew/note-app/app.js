@@ -90,8 +90,8 @@ const argv = yargs
     handler: function(argv) {
       const noteRemoved = notes.removeNote(argv.title);
       const message = noteRemoved
-        ? `Note "${chalk.red(argv.title)} is removed`
-        : 'Note was not removed';
+        ? `Note "${chalk.green(argv.title)}" is removed`
+        : chalk.red('Note was not removed');
       console.log(message);
     },
   }).argv;
