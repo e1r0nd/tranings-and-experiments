@@ -4,7 +4,7 @@ const forecastAPI = require('../key').forecastAPI; // Forecast API Key
 const getWeather = (lat, lng, callback) => {
   request(
     {
-      url: `https://api.darksky.net/forecast/${forecastAPI}/${lat},${lng}`,
+      url: `https://api.darksky.net/forecast/${forecastAPI}/${lat},${lng}?units=si&lang=ru`,
       json: true,
     },
     (error, response, body) => {
@@ -12,6 +12,8 @@ const getWeather = (lat, lng, callback) => {
         callback(undefined, {
           temperature: body.currently.temperature,
           apparentTemperature: body.currently.apparentTemperature,
+          precipProbability: body.currently.precipProbability,
+          summary: body.daily.data[0].summary,
         });
       } else if (error || !(body.currently && body.currently.temperature)) {
         callback('Unable to connect to the server.');

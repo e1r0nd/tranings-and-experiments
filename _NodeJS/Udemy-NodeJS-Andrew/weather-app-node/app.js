@@ -30,9 +30,11 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
           console.log(errorMessage);
         } else {
           console.log(
-            `It's currently: ${weatherResults.temperature}. Feels like ${
+            `It's currently: ${weatherResults.temperature}°C. Feels like ${
               weatherResults.apparentTemperature
-            }`,
+            }°C. There's a ${
+              weatherResults.precipProbability
+            }% chance of rain.\n${weatherResults.summary}`,
           );
         }
       },
