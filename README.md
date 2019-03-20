@@ -2,14 +2,40 @@
 
 just for fun
 
+## CSS
+
+## C++
+
+## Firebase
+
+## JavaScript ES6
+
+[JavaScript30](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_JavaScript-ES6/JavaScript30): Native JavaScript course https://javascript30.com/
+
+
+## NodeJS
+
+## Python
+
+[python-learning](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/python-learning): "Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
+<br>
+[Python-tutorial-Socratica](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Python-tutorial-Socratica): "Python Programming Tutorials (Computer Science)" by Socratica https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-
+
+## React/Redux
+
+## TypeScript
+
+## WASM
+
+## Canvas
+
+## To sort:
+
 **start**
 node course http://learn.javascript.ru/courses/nodejs
 
 **node-server**
 node server http://learn.javascript.ru/courses/nodejs
-
-**JavaScript30**
-Native JavaScript course https://javascript30.com/
 
 **oop**
 OOP in JS http://learn.javascript.ru/oop
@@ -59,8 +85,6 @@ Wes Bos' tutorial Learn Node https://learnnode.com
 **note-app**
 "The Complete Node.js Developer Course (2nd Edition)": Section: 3. Node.js Fundamentals (Note App) https://www.udemy.com/the-complete-nodejs-developer-course-2/
 
-**python-learning**
-"Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
 
 **sick-fits--wesbos-advanced-react**
 "Fullstack Advanced React and GraphQL"
