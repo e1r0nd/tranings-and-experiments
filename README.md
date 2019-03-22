@@ -3,6 +3,9 @@
 just for fun
 
 ## CSS
+[What The Flexbox?!](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_CSS/Flexbox-training): Exercises for the "What The Flexbox?!" video course. Videos available at http://flexbox.io
+<br>
+[CSS Grid Video Course](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_CSS/grid-css): These are the starter files and finished solutions. Grab the full course over at http://CSSGrid.io.
 
 ## C++
 
