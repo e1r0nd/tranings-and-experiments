@@ -14,13 +14,13 @@ const argv = yargs
   .help()
   .alias('help', 'h').argv;
 
-console.log(argv);
+// console.log(argv);
 
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
   if (errorMessage) {
     console.error(errorMessage);
   } else {
-    console.log(JSON.stringify(results, undefined, 2));
+    // console.log(JSON.stringify(results, undefined, 2));
 
     weather.getWeather(
       results.latitude,
@@ -30,7 +30,9 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
           console.log(errorMessage);
         } else {
           console.log(
-            `It's currently: ${weatherResults.temperature}°C. Feels like ${
+            `The forecast for: ${results.address}\nIt's currently: ${
+              weatherResults.temperature
+            }°C. Feels like ${
               weatherResults.apparentTemperature
             }°C. There's a ${
               weatherResults.precipProbability
