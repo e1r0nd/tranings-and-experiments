@@ -9,24 +9,25 @@ const geocodeAddress = function(address, callback) {
       url: `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?access_token=${mapAPI}&limit=1`,
       json: true,
     },
-    (error, response) => {
+    (error, /* response: */ { body }) => {
       if (error) {
         callback('Unable to find that address.');
         return;
-      } else if (response.body.features.length === 0) {
+      } else if (body.features.length === 0) {
         callback('Unable to find location.');
         return;
-      } else if (response.body.status === 'REQUEST_DENIED') {
+      } else if (body.status === 'REQUEST_DENIED') {
         callback(undefined, {
           address: 'Default address: Harvester, IA 50234, USA',
           latitude: 41.8962067,
           longtitude: -93.1578875,
         });
-      } else if (response.body.features.length) {
+      } else if (body.features.length) {
+        const { place_name, center } = body.features[0];
         callback(undefined, {
-          address: response.body.features[0].place_name,
-          latitude: response.body.features[0].center[1],
-          longtitude: response.body.features[0].center[0],
+          address: place_name,
+          latitude: center[1],
+          longtitude: center[0],
         });
       } else {
         callback(`Result: Unknown error!`);

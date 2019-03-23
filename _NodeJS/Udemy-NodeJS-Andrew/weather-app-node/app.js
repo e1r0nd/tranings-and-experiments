@@ -25,18 +25,23 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     weather.getWeather(
       results.latitude,
       results.longtitude,
-      (errorMessage, weatherResults) => {
+      (
+        errorMessage,
+        {
+          /* weatherResults: */
+          temperature,
+          apparentTemperature,
+          precipProbability,
+          summary,
+        },
+      ) => {
         if (errorMessage) {
           console.log(errorMessage);
         } else {
           console.log(
-            `The forecast for: ${results.address}\nIt's currently: ${
-              weatherResults.temperature
-            }°C. Feels like ${
-              weatherResults.apparentTemperature
-            }°C. There's a ${
-              weatherResults.precipProbability
-            }% chance of rain.\n${weatherResults.summary}`,
+            `The forecast for: ${
+              results.address
+            }\nIt's currently: ${temperature}°C. Feels like ${apparentTemperature}°C. There's a ${precipProbability}% chance of rain.\n${summary}`,
           );
         }
       },
