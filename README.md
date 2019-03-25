@@ -9,6 +9,9 @@ just for fun
 
 ## C++
 
+[Cpp-First-Tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Cpp/Cpp-First-Tutorial) Уроки C++ с нуля
+https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
+
 ## Firebase
 
 ## JavaScript ES6
