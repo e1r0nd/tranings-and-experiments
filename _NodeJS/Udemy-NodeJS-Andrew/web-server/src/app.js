@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 //   res.render('maitance.hbs');
 // });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
 
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 hbs.registerHelper('screamIt', (text) => text.toUpperCase());
@@ -44,6 +44,13 @@ app.get('/help', (req, res) => {
     title: 'Help Page',
   });
 });
+app.get('/weather', (req, res) => {
+  res.send({
+    forcast: 'Snowing',
+    location: 'New York',
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });
