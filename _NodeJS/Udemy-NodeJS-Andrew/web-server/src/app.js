@@ -1,12 +1,12 @@
+const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
 const port = process.env.PORT || 3000;
 const app = express();
-hbs.registerPartials(__dirname + '/views/partials');
-app.set('view engine', 'hbs');
 
+// Logging
 app.use((req, res, next) => {
   const now = new Date().toString();
   const log = `${now}: ${req.method} ${req.url}`;
@@ -19,11 +19,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// Turns off server :)
 // app.use((req, res, next) => {
 //   res.render('maitance.hbs');
 // });
 
-app.use(express.static(__dirname + '/../public'));
+app.set('view engine', 'hbs');
+hbs.registerPartials(path.join(__dirname, '../views/partials'));
+app.use(express.static(path.join(__dirname, '../public')));
 
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 hbs.registerHelper('screamIt', (text) => text.toUpperCase());
@@ -35,19 +38,27 @@ app.get('/json', (req, res) => {
   });
 });
 app.get('/about', (req, res) => {
-  res.render('about.hbs', {
+  res.render('about', {
     title: 'About Page',
   });
 });
 app.get('/help', (req, res) => {
-  res.render('help.hbs', {
+  res.render('help', {
     title: 'Help Page',
   });
+});
+app.get('/help/*', (req, res) => {
+  res.send('An article is not found.');
 });
 app.get('/weather', (req, res) => {
   res.send({
     forcast: 'Snowing',
     location: 'New York',
+  });
+});
+app.get('*', (req, res) => {
+  res.render('404', {
+    title: '404 Page',
   });
 });
 

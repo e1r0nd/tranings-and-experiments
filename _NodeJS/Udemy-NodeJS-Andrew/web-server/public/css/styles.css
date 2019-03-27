@@ -1,0 +1,18 @@
+h1 {
+  color: grey;
+}
+h2 {
+  color: brown;
+}
+li {
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+}
+.menu li {
+  display: flex;
+  align-self: auto;
+  margin: 0 50px;
+}
