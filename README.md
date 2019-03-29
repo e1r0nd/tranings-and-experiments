@@ -13,6 +13,8 @@ just for fun
 https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## Firebase
+[firebase-node](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Firebase/firebase-node) Node.js apps on Firebase Hosting Crash Course - Firecasts https://www.youtube.com/watch?v=LOeioOKUKI8<br>
+[irebase-todos](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Firebase/firebase-todos) Serverless Application using Google Firebase
 
 ## JavaScript ES6
 
