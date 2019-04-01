@@ -51,9 +51,15 @@ app.get('/help/*', (req, res) => {
   res.send('An article is not found.');
 });
 app.get('/weather', (req, res) => {
+  if (!req.query.address) {
+    return res.send({
+      error: 'You must provide an address',
+    });
+  }
   res.send({
     forcast: 'Snowing',
     location: 'New York',
+    address: req.query.address,
   });
 });
 app.get('*', (req, res) => {
