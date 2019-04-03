@@ -41,6 +41,12 @@ app.get('/json', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Weather Application',
+  });
+});
+
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About Page',
@@ -78,7 +84,7 @@ app.get('/weather', (req, res) => {
             res.send({ error: errorMessage });
           } else {
             res.send({
-              forcast: `It's currently: ${temperature}°C. Feels like ${apparentTemperature}°C. There's a ${precipProbability}% chance of rain. ${summary}`,
+              forecast: `It's currently: ${temperature}°C. Feels like ${apparentTemperature}°C. There's a ${precipProbability}% chance of rain. ${summary}`,
               location: results.address,
               address: req.query.address,
             });
@@ -87,11 +93,6 @@ app.get('/weather', (req, res) => {
       );
     }
   });
-  // res.send({
-  // forcast: 'Snowing',
-  // location: 'New York',
-  // address: req.query.address,
-  // });
 });
 
 app.get('*', (req, res) => {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Application</title>
+  <link type="text/css" href="/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  {{> header}}
+
+  <form action="/weather" id="formAddress">
+    <label for="address">Address
+      <input type="address" placeholder="Your address" id="address" />
+    </label>
+    <button>Search</button>
+  </form>
+  <div id="responseBlock"></div>
+  {{> footer}}
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
