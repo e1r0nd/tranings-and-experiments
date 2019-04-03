@@ -51,9 +51,6 @@ OOP in JS http://learn.javascript.ru/oop
 **canvas**
 Playing with Canvas
 
-**firebase-todos**
-Serverless Application using Google Firebase. Based on jQuery TodoMVC.
-
 **es6-babel-grunt**
 babel + grunt - minimal
 
@@ -71,9 +68,6 @@ React first steps https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKd
 
 **hello-world**
 The project was bootstrapped with Create React App
-
-**Flexbox-training**
-Wes Bos's Flex CSS tutorial http://flexbox.io
 
 **node-hero**
 Node hero tutorial by Risingstack https://risingstack.com/resources/node-hero
