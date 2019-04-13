@@ -36,33 +36,33 @@ MongoClient.connect(
         console.log(result.ops);
       },
     );
-    // db.collection('users').insertMany(
-    //   [
-    //     {
-    //       name: 'Jen',
-    //       age: '12',
-    //     },
-    //     { name: 'Me', age: '10' },
-    //   ],
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log('Unable to insert users');
-    //     }
-    //     console.log(result.ops);
-    //   },
-    // );
-    // db.collection('tasks').insertMany(
-    //   [
-    //     { description: 'task1', completed: false },
-    //     { description: 'yask 2', completed: false },
-    //     { description: 'yield 3', completed: false },
-    //   ],
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log('Unable to insert tasks');
-    //     }
-    //     console.log(result.ops);
-    //   },
-    // );
+    db.collection('users').insertMany(
+      [
+        {
+          name: 'Jen',
+          age: '12',
+        },
+        { name: 'Me', age: '10' },
+      ],
+      (error, result) => {
+        if (error) {
+          return console.log('Unable to insert users');
+        }
+        console.log(result.ops);
+      },
+    );
+    db.collection('tasks').insertMany(
+      [
+        { description: 'task1', completed: false },
+        { description: 'yask 2', completed: false },
+        { description: 'yield 3', completed: false },
+      ],
+      (error, result) => {
+        if (error) {
+          return console.log('Unable to insert tasks');
+        }
+        console.log(result.ops);
+      },
+    );
   },
 );
