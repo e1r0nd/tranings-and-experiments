@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Productivity Quotes
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/dist/App.css')
+    link(rel="shortcut icon" type="image/png" href="/images/icons/favico.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+  body
+    .wrapper
+      h1= quote
+      p
+        i= author
+
+  block scripts
+      script(src="/dist/App.bundle.js")
