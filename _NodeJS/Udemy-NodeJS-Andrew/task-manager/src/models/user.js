@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
@@ -53,7 +54,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = async function() {
   const user = this;
-  const token = jwt.sign({ _id: user._id.toString() }, 'thisisataskmanager');
+  const token = jwt.sign({ _id: user._id.toString() }, process.env.SECRET);
 
   user.tokens = user.tokens.concat({ token });
   user.save();

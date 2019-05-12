@@ -1,6 +1,7 @@
 const express = require('express');
 const router = new express.Router();
 const User = require('../models/user');
+const auth = require('../middleware/auth');
 
 /* Users Requests */
 router.post('/users', async (req, res) => {
@@ -36,13 +37,15 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {
-  try {
-    const users = await User.find({});
-    res.send(users);
-  } catch (error) {
-    res.status(400).send(error);
-  }
+router.get('/users/me', auth, async (req, res) => {
+  res.send(req.user);
+  // *** Async/await approach ***
+  // try {
+  //   const users = await User.find({});
+  //   res.send(users);
+  // } catch (error) {
+  //   res.status(400).send(error);
+  // }
   // *** Promises approach ***
   // User.find({})
   //   .then((users) => res.send(users))
