@@ -33,6 +33,10 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## TypeScript
 
+[TypeScript-Udemy-Tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_TypeScript/TypeScript-Udemy-Tutorial) "Understanding TypeScript" at https://www.udemy.com/understanding-typescript/
+<br>
+[productivity-quotes-typescript](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_TypeScript/productivity-quotes-typescript) Productivity Quotes
+
 ## WASM
 
 ## Canvas
