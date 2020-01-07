@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The conscious timer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="style.css" media="all" type="text/css" rel="stylesheet" />
+    <title>Conscious timer</title>
+
+    <meta name="author" content="Anatol Merezhanyi" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="images/icons/icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="images/icons/icon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="128x128"
+      href="images/icons/icon-128x128.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="images/icons/icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="images/icons/icon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/icons/icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="384x384"
+      href="images/icons/icon-384x384.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="images/icons/icon-512x512.png"
+    />
+    <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="The conscious timer" />
+    <meta name="apple-mobile-web-app-title" content="The conscious timer" />
+    <meta name="theme-color" content="#dfdbe5" />
+    <meta name="msapplication-TileColor" content="#dfdbe5" />
+    <meta
+      name="msapplication-TileImage"
+      content="/images/icons/icon-144x144.png"
+    />
+    <meta name="msapplication-navbutton-color" content="#2196f3" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="canonical" href="https://e1r0nd.github.io/conscious-timer" />
+  </head>
+
+  <body>
+    <noscript>
+      You need JavaScript enabled to use this application.
+    </noscript>
+
+    <button class="btn" type="button" aria-label="Toggle the timer" id="btn">
+      <img class="btn__img" alt="" src="images/bell-white.svg" />
+      <img
+        class="btn__img u-invisible"
+        alt=""
+        src="images/bell-color.svg"
+        id="btnImg"
+      />
+      <div class="btn__overlay u-invisible" id="btnOverlay"></div>
+    </button>
+    <script src="script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then(function() {
+          console.log("Service Worker Registered");
+        });
+      }
+    </script>
+  </body>
+</html>
