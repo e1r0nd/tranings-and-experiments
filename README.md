@@ -20,6 +20,8 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 [JavaScript30](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_JavaScript-ES6/JavaScript30): Native JavaScript course https://javascript30.com/
 
+[The Conscious Timer](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_JavaScript-ES6/c-timer)
+
 
 ## NodeJS
 
