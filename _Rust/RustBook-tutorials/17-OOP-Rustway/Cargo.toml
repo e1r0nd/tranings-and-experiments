@@ -1,0 +1,8 @@
+[package]
+name = "blog-post"
+version = "0.1.0"
+authors = ["Anatol Merezhanyi <a.merezhanyi@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+blog = { path = "blog" }
