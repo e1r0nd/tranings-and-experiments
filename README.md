@@ -33,6 +33,14 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## React/Redux
 
+## Rust
+
+[RustBook-tutorials](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/RustBook-tutorials) from [The Rust Programming Language book](https://doc.rust-lang.org/book/)
+
+[rust_code - "The Rust Programming Language" tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/rust_code) from [https://www.udemy.com/the-rust-programming-language/](https://www.udemy.com/the-rust-programming-language/]
+
+[rust-hello-world](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/rust-hello-world) from ["The Rust Programming Language"](https://www.udemy.com/rust-lang/)
+
 ## TypeScript
 
 [TypeScript-Udemy-Tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_TypeScript/TypeScript-Udemy-Tutorial) "Understanding TypeScript" at https://www.udemy.com/understanding-typescript/
@@ -80,12 +88,6 @@ Node hero tutorial by Risingstack https://risingstack.com/resources/node-hero
 
 **learn-node**
 Wes Bos' tutorial Learn Node https://learnnode.com
-
-**rust_code**
-"The Rust Programming Language" tutorial from https://www.udemy.com/the-rust-programming-language/
-
-**rust-hello-world**
-"The Rust Programming Language" https://www.udemy.com/rust-lang/
 
 **weather-app-node**
 "The Complete Node.js Developer Course (2nd Edition)": Section: 4. Asynchronous Node.js (Weather App) https://www.udemy.com/the-complete-nodejs-developer-course-2/
