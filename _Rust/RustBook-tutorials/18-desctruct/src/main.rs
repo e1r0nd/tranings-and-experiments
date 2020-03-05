@@ -61,6 +61,47 @@ fn main() {
     println!("inches = {}", length);
 
     foo(3, 4);
+
+    let mut setting_value = Some(5);
+    let new_setting_value = Some(10);
+
+    match (setting_value, new_setting_value) {
+        (Some(_), Some(_)) => {
+            println!("Can't overwrite an existing customized value");
+        }
+        _ => {
+            setting_value = new_setting_value;
+        }
+    }
+
+    println!("setting is {:?}", setting_value);
+
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, _, third, _, fifth) => println!("Some numbers: {}, {}, {}", first, third, fifth),
+    }
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {}, {}", first, last);
+        }
+    }
+
+    let _x1 = 5;
+    let y1 = 10;
+
+    struct Point0 {
+        x: i32,
+        y: i32,
+        z: i32,
+    }
+    let origin = Point0 { x: 0, y: 1, z: 2 };
+    match origin {
+        Point0 { x, .. } => println!("x is {}", x),
+    }
+    match origin {
+        Point0 { y, .. } => println!("y is {}", y),
+    }
 }
 
 fn foo(_: i32, y: i32) {
