@@ -49,6 +49,10 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## WASM
 
+[Rust bin -> WASI](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_WASM/rust-bin-wasi) compile Rust file to WASI to be able to run it via wasmer/wasmtime
+
+[Rust->WASM run in Python](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_WASM/python-rust-wasm) compile Rust module to WASM and include in Python as module using wasmer
+
 ## Canvas
 
 ## To sort:
