@@ -35,6 +35,8 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## Rust
 
+[hello](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/hello) Rust web server from [The Rust Programming Language book](https://doc.rust-lang.org/book/)
+
 [RustBook-tutorials](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/RustBook-tutorials) from [The Rust Programming Language book](https://doc.rust-lang.org/book/)
 
 [rust_code - "The Rust Programming Language" tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/rust_code) from https://www.udemy.com/the-rust-programming-language/
