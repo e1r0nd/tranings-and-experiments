@@ -35,6 +35,8 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## Rust
 
+[hello](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/hello) Rust web server from [The Rust Programming Language book](https://doc.rust-lang.org/book/)
+
 [RustBook-tutorials](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/RustBook-tutorials) from [The Rust Programming Language book](https://doc.rust-lang.org/book/)
 
 [rust_code - "The Rust Programming Language" tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Rust/rust_code) from https://www.udemy.com/the-rust-programming-language/
@@ -48,6 +50,10 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 [productivity-quotes-typescript](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_TypeScript/productivity-quotes-typescript) Productivity Quotes
 
 ## WASM
+
+[Rust bin -> WASI](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_WASM/rust-bin-wasi) compile Rust file to WASI to be able to run it via wasmer/wasmtime
+
+[Rust->WASM run in Python](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_WASM/python-rust-wasm) compile Rust module to WASM and include in Python as module using wasmer
 
 ## Canvas
 
