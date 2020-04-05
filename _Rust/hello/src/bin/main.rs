@@ -1,21 +1,10 @@
+use hello::ThreadPool;
 use std::fs;
 use std::io::prelude::*;
 use std::net::TcpListener;
 use std::net::TcpStream;
 use std::thread;
 use std::time::Duration;
-
-struct ThreadPool;
-impl ThreadPool {
-    fn new(size: u32) -> ThreadPool {
-        ThreadPool
-    }
-    fn execute<F>(&self, f: F)
-    where
-        F: FnOnce() + Send + 'static,
-    {
-    }
-}
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
