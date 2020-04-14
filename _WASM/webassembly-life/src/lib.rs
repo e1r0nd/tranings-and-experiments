@@ -43,6 +43,15 @@ pub struct Universe {
 #[allow(clippy::new_without_default)]
 #[wasm_bindgen]
 impl Universe {
+    pub fn width(&self) -> u32 {
+        self.width
+    }
+    pub fn height(&self) -> u32 {
+        self.height
+    }
+    pub fn cells(&self) -> *const Cell {
+        self.cells.as_ptr()
+    }
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
 
