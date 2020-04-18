@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Hello wasm-pack!</title>
+    <title>The Game of Life!</title>
     <style>
       body {
         position: absolute;
@@ -19,6 +19,15 @@
   </head>
   <body>
     <canvas id="game-of-life-canvas"></canvas>
+    <button id="play-pause"></button>
+    <input
+      type="range"
+      id="framesPerSecond"
+      value="10"
+      step="2"
+      min="2"
+      max="60"
+    />
     <script src="./bootstrap.js"></script>
   </body>
 </html>
