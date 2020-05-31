@@ -27,7 +27,8 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## Python
 
-[drf-recipe](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/drf_recipe): "Django REST Framework" course https://www.udemy.com/course/django-python-advanced/
+[Flask-React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Flask-React): Flask Movie API: https://youtu.be/Urx8Kj00zsI<br>
+[drf-recipe](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/drf-recipe): "Django REST Framework" course https://www.udemy.com/course/django-python-advanced/
 <br>
 [python-learning](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/python-learning): "Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
 <br>
