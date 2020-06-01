@@ -27,6 +27,7 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 
 ## Python
 
+[Fullstack Python React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Fullstack-Python-React) - leadmanager app: Django + React<br>
 [Flask-React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Flask-React): Flask Movie API: https://youtu.be/Urx8Kj00zsI<br>
 [drf-recipe](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/drf-recipe): "Django REST Framework" course https://www.udemy.com/course/django-python-advanced/
 <br>
