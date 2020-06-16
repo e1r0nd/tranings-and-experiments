@@ -29,7 +29,7 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 [Flask-React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Flask-React): Flask Movie - Python Flask + JS React. [API](https://www.youtube.com/watch?v=Urx8Kj00zsI) + [FrontEnd](https://www.youtube.com/watch?v=06pWsB_hoD4)<br>
 [Fullstack Python React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Fullstack-Python-React) - leadmanager app: Django + React<br>
 [Flask-React](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Flask-React): Flask Movie API: https://youtu.be/Urx8Kj00zsI<br>
-[drf-recipe](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/drf-recipe): "Django REST Framework" course https://www.udemy.com/course/django-python-advanced/
+[drf-recipe](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/drf-recipe): ["Django REST Framework"](https://www.udemy.com/course/django-python-advanced/) course, original [repository](https://github.com/LondonAppDeveloper/recipe-app-api)
 <br>
 [python-learning](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/python-learning): "Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
 <br>
