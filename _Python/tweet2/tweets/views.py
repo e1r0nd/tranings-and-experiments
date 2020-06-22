@@ -10,7 +10,7 @@ def home_view(request, *args, **kwargs):
 
 def tweet_list_view(request, *args, **kwargs):
     qs = Tweet.objects.all()
-    tweets_list = [{"id": x.id, "content": x.content} for x in qs]
+    tweets_list = [{"id": x.id, "content": x.content, "likes": x.likes} for x in qs]
     data = {"response": tweets_list}
     status = 200
 
