@@ -1,9 +1,14 @@
 {% extends 'base.html' %} {% block head_title %} - Home{%endblock head_title %}
 {% block content %}
+<div class="row">
+  <div class="col text-center">
+    <h1>Welcome to Tweetme 2!</h1>
+  </div>
+</div>
 
-<h1>Welcome to Tweetme 2!</h1>
-
-<div id="tweets">Replace me</div>
+<div class="row" id="tweets">
+  Loading...
+</div>
 
 <script>
   const tweetsElement = document.getElementById("tweets");
@@ -19,7 +24,7 @@
     return `<button class='btn btn-primary' onclick=handleDidLike(${tweet.id}, ${tweet.likes})>Like</button>`;
   }
   function formattedTweet(tweet) {
-    return `<div class="mb-4 tweet" id="tweet-${tweet.id}"
+    return `<div class="mb-4 col-12 col-md-10 mx-auto border rounded py-3 tweet" id="tweet-${tweet.id}"
                 <h1>${tweet.id}</h1>
                 <p>${tweet.content}</p>
                 <div class="btn-group">${likeBtn(tweet)}</div>
