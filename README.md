@@ -34,6 +34,8 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 [python-learning](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/python-learning): "Complete Python Bootcamp: Go from zero to hero in Python 3" https://www.udemy.com/complete-python-bootcamp/
 <br>
 [Python-tutorial-Socratica](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/Python-tutorial-Socratica): "Python Programming Tutorials (Computer Science)" [by Socratica](https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-)
+<br>
+[Tweetme2](https://github.com/e1r0nd/tranings-and-experiments/tree/master/_Python/tweet2): ["Create a Twitter-like App with Python Django JavaScript and React. Full TUTORIAL"](https://www.youtube.com/watch?v=f1R_bykXHGE)
 
 ## React/Redux
 
