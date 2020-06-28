@@ -72,6 +72,9 @@
         } else {
           alert("An error occured. Please try again later.");
         }
+      } else if (xhr.status === 401) {
+        alert("You must login!");
+        window.location.href = "/login";
       }
     };
     xhr.onerror = function () {
@@ -95,7 +98,7 @@
     xhr.open(method, url);
     xhr.onload = function () {
       const serverResponse = xhr.response;
-      const listedItems = serverResponse.response;
+      const listedItems = serverResponse;
       const finalTweetStr = listedItems.map((e) => formattedTweet(e));
       element.innerHTML = finalTweetStr.join("");
     };
