@@ -1,5 +1,7 @@
 # Django / Graphene + React -> Heroku
 
+https://e1r0nd.blogspot.com/2020/07/wsl-django-graphene-react-heroku.html
+
 ## To install deps:
 
 ```bash
