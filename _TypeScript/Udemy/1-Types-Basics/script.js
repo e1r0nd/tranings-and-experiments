@@ -29,9 +29,9 @@ for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
     // console.log(hobby.map()); >>> TypeError
 }
 person.role = [0, "admin"];
-/** Union Types */
+/** Union Types & Literals*/
 console.log(">>> Union Types");
-function combine(inp1, inp2) {
+function combine(inp1, inp2, resultConversion) {
     var result;
     if (typeof inp1 === "number" && typeof inp2 === "number") {
         result = inp1 + inp2;
@@ -39,9 +39,32 @@ function combine(inp1, inp2) {
     else {
         result = String(inp1) + String(inp2);
     }
-    return result;
+    if (resultConversion === "as-string") {
+        return result.toString();
+    }
+    else {
+        return +result;
+    }
 }
-var combinedNumbers = combine(40, 2);
+var combinedNumbers = combine(40, 2, "as-number");
 console.log("Combined numbers: " + combinedNumbers);
-var combinedStrings = combine("foo", "bar");
+var combinedNumbersAsStrings = combine("1900", "42", "as-string");
+console.log("Combined numbers as strings: " + combinedNumbersAsStrings);
+var combinedStrings = combine("foo", "bar", "as-string");
 console.log("Combined strings: " + combinedStrings);
+/** Custom Types */
+console.log(">>> Custom Types");
+function combination(a, b) {
+    if (typeof a === "number" && typeof b === "number") {
+        return a + b;
+    }
+    else {
+        return a.toString() + b.toString();
+    }
+}
+console.log("Combination: " + combination(1, 2));
+console.log("Combination Types combination:");
+var u1 = { name: "Max" };
+console.log("u1 initial:", u1);
+u1 = "Michael";
+console.log("u1 modified: " + u1);
