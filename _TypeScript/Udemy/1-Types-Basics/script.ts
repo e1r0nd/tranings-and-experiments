@@ -94,6 +94,20 @@ u1 = "Michael";
 console.log(`u1 modified: ${u1}`);
 
 /** Function Types */
-console.log('>>> Function Type');
+console.log(">>> Function Type");
 
+let combineValues: (x: number, b: number) => number;
+combineValues = add;
+// combineValues = 5; Error -> Type '5' is not assignable to type 'Function'.
+console.log(`via a function: ${combineValues(1, 2)}`);
 
+function printResult(text: number | string) {
+  console.log(text.toString());
+}
+function addAndHandle(x: number, y: number, cb: (z: number) => void) {
+  const result = x + y;
+  cb(result);
+}
+
+console.log("via a callback function:");
+addAndHandle(40, 2, printResult);

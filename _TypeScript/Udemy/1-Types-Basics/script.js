@@ -68,3 +68,18 @@ var u1 = { name: "Max" };
 console.log("u1 initial:", u1);
 u1 = "Michael";
 console.log("u1 modified: " + u1);
+/** Function Types */
+console.log(">>> Function Type");
+var combineValues;
+combineValues = add;
+// combineValues = 5; Error -> Type '5' is not assignable to type 'Function'.
+console.log("via a function: " + combineValues(1, 2));
+function printResult(text) {
+    console.log(text.toString());
+}
+function addAndHandle(x, y, cb) {
+    var result = x + y;
+    cb(result);
+}
+console.log("via a callback function:");
+addAndHandle(40, 2, printResult);
