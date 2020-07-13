@@ -111,3 +111,19 @@ function addAndHandle(x: number, y: number, cb: (z: number) => void) {
 
 console.log("via a callback function:");
 addAndHandle(40, 2, printResult);
+
+/** Unknown & Never types */
+console.log(">>> Unknown & Never Types");
+let userInput: unknown;
+let userName: string;
+
+userInput = "Max";
+// userName = userInput; <<< Error
+if (typeof userInput === "string") {
+  userName = userInput; // No Error
+}
+
+function generateError(message: string, code: number): never {
+  throw { message, errorCode: code };
+}
+generateError("An error occured", 500);

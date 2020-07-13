@@ -83,3 +83,16 @@ function addAndHandle(x, y, cb) {
 }
 console.log("via a callback function:");
 addAndHandle(40, 2, printResult);
+/** Unknown & Never types */
+console.log(">>> Unknown & Never Types");
+var userInput;
+var userName;
+userInput = "Max";
+// userName = userInput; <<< Error
+if (typeof userInput === "string") {
+    userName = userInput; // No Error
+}
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
+}
+generateError("An error occured", 500);
