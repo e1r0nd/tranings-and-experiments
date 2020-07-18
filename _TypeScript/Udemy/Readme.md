@@ -9,6 +9,6 @@ You need TypeScript installed
 ## Usage example
 
 ```bash
-cd 1-Types-Basics
+cd 2-Types-Basics
 tsc script.ts && node script.js
 ```
