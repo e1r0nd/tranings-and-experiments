@@ -1,55 +1,43 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 /** Basic Classes */
 console.log(">>> Basic Classes");
-var Department = /** @class */ (function () {
-    function Department(n) {
+class Department {
+    constructor(n) {
         this.name = n;
     }
-    Department.prototype.describe = function () {
-        console.log("Deparment:" + this.name);
-    };
-    return Department;
-}());
-var accounting = new Department("Accounting");
+    describe() {
+        console.log("Department:" + this.name);
+    }
+}
+const accounting = new Department("Accounting");
 console.log(accounting);
 accounting.describe();
-var accountingCopy = { name: "some", describe: accounting.describe };
+const accountingCopy = { name: "some", describe: accounting.describe };
 accountingCopy.describe();
 /** Private, Public & Protected fields */
-var TheDepartment = /** @class */ (function () {
-    function TheDepartment(id, n) {
+class TheDepartment {
+    constructor(id, n) {
         this.id = id;
         this.employees = [];
         this.availableEmployees = [];
         this.name = n;
-        this.id = "#" + id;
+        this.id = `#${id}`;
     }
-    TheDepartment.prototype.describe = function () {
+    describe() {
         // this.id = "2"; <<< Error
-        console.log("Deparment" + this.id + ": " + this.name);
-    };
-    TheDepartment.prototype.employee = function (employee) {
+        console.log(`Department${this.id}: ${this.name}`);
+    }
+    employee(employee) {
         this.employees.push(employee);
-    };
-    TheDepartment.prototype.printEmployeeInformation = function () {
+    }
+    printEmployeeInformation() {
         console.log(this.employees.length);
         console.log(this.employees);
-    };
-    return TheDepartment;
-}());
-var development = new TheDepartment("1", "Development");
+    }
+    static createEmployee(name) {
+        return { name };
+    }
+}
+const development = new TheDepartment("1", "Development");
 console.log(development);
 development.employee("Programmer");
 development.employee("Manager");
@@ -58,24 +46,46 @@ development.describe();
 development.printEmployeeInformation();
 /** Inheritance & Protected fields*/
 console.log(">>> Inheritance");
-var ITDepartment = /** @class */ (function (_super) {
-    __extends(ITDepartment, _super);
-    function ITDepartment(id, admins) {
-        var _this = _super.call(this, id, "IT") || this;
-        _this.admins = [];
-        _this.admins = admins;
-        return _this;
+class ITDepartment extends TheDepartment {
+    constructor(id, admins, reports) {
+        super(id, "IT");
+        this.admins = [];
+        this.admins = admins;
         // this.employees.push("hah!"); <<< Error
+        this.reports = reports;
+        this.lastReport = reports[0];
     }
-    ITDepartment.prototype.addAvailableEmployee = function (name) {
+    addAvailableEmployee(name) {
         this.availableEmployees.push(name);
-    };
-    ITDepartment.prototype.printAvailableEmployees = function () {
+    }
+    printAvailableEmployees() {
         console.log(this.availableEmployees);
-    };
-    return ITDepartment;
-}(TheDepartment));
-var itDepartment = new ITDepartment("0", ["root"]);
+    }
+    addReport(text) {
+        this.reports.push(text);
+        this.lastReport = text;
+    }
+    get mostRecentReport() {
+        if (this.lastReport) {
+            return this.lastReport;
+        }
+        else {
+            throw new Error("No reports found!");
+        }
+    }
+    set mostRecentReport(value) {
+        if (!value) {
+            throw new Error("No report provided.");
+        }
+        this.addReport(value);
+    }
+}
+const itDepartment = new ITDepartment("0", ["root"], []);
 console.log(itDepartment.describe());
 itDepartment.addAvailableEmployee("Mad Max");
 itDepartment.printAvailableEmployees();
+itDepartment.addReport("first");
+itDepartment.mostRecentReport = "second one";
+console.log(itDepartment.mostRecentReport);
+const employee1 = TheDepartment.createEmployee("tester");
+console.log(employee1);

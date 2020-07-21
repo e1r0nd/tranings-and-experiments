@@ -9,7 +9,7 @@ class Department {
   }
 
   describe(this: Department) {
-    console.log("Deparment:" + this.name);
+    console.log("Department:" + this.name);
   }
 }
 
@@ -33,7 +33,7 @@ class TheDepartment {
 
   describe(this: TheDepartment) {
     // this.id = "2"; <<< Error
-    console.log(`Deparment${this.id}: ${this.name}`);
+    console.log(`Department${this.id}: ${this.name}`);
   }
 
   employee(employee: string) {
@@ -43,6 +43,10 @@ class TheDepartment {
   printEmployeeInformation() {
     console.log(this.employees.length);
     console.log(this.employees);
+  }
+
+  static createEmployee(name: string) {
+    return { name };
   }
 }
 
@@ -60,10 +64,15 @@ console.log(">>> Inheritance");
 
 class ITDepartment extends TheDepartment {
   public admins: string[] = [];
-  constructor(id: string, admins: string[]) {
+  private lastReport: string;
+  private reports: string[];
+
+  constructor(id: string, admins: string[], reports: string[]) {
     super(id, "IT");
     this.admins = admins;
     // this.employees.push("hah!"); <<< Error
+    this.reports = reports;
+    this.lastReport = reports[0];
   }
 
   addAvailableEmployee(name: string) {
@@ -73,10 +82,37 @@ class ITDepartment extends TheDepartment {
   printAvailableEmployees() {
     console.log(this.availableEmployees);
   }
+
+  addReport(text: string) {
+    this.reports.push(text);
+    this.lastReport = text;
+  }
+
+  get mostRecentReport() {
+    if (this.lastReport) {
+      return this.lastReport;
+    } else {
+      throw new Error("No reports found!");
+    }
+  }
+
+  set mostRecentReport(value: string) {
+    if (!value) {
+      throw new Error("No report provided.");
+    }
+    this.addReport(value);
+  }
 }
 
-const itDepartment = new ITDepartment("0", ["root"]);
+const itDepartment = new ITDepartment("0", ["root"], []);
 console.log(itDepartment.describe());
 
 itDepartment.addAvailableEmployee("Mad Max");
 itDepartment.printAvailableEmployees();
+
+itDepartment.addReport("first");
+itDepartment.mostRecentReport = "second one";
+console.log(itDepartment.mostRecentReport);
+
+const employee1 = TheDepartment.createEmployee("tester");
+console.log(employee1);

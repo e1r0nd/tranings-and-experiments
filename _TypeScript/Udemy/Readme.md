@@ -1,4 +1,4 @@
-# Understanding TypeScript - 2020 Edition 
+# Understanding TypeScript - 2020 Edition
 
 https://www.udemy.com/course/understanding-typescript/
 
@@ -10,5 +10,5 @@ You need TypeScript installed
 
 ```bash
 cd 2-Types-Basics
-tsc script.ts && node script.js
+tsc --target ES6 script.ts && node script.js
 ```
