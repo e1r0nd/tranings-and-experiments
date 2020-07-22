@@ -89,3 +89,29 @@ itDepartment.mostRecentReport = "second one";
 console.log(itDepartment.mostRecentReport);
 const employee1 = TheDepartment.createEmployee("tester");
 console.log(employee1);
+/** Interface */
+console.log(">>> Interface");
+let person1;
+person1 = {
+    name: "Hans",
+    age: 10,
+    greet(phrase) {
+        console.log(`${this.name} says ${phrase}`);
+    },
+};
+person1.greet("YOLO!");
+console.log(">>> Interface with Class");
+class Robot {
+    constructor(name, position) {
+        this.name = name;
+        this.position = position;
+        this.type = "Android";
+        this.brainType = "T1000";
+    }
+}
+const robot1 = new Robot("C3PO", "Navigator");
+console.log(robot1);
+console.log("Function Interface");
+const addThem = (a, b, c) => c ? a + b + c : a + b;
+console.log(`2 + 2 = ${addThem(2, 2)}`);
+console.log(`2 + 2 + 1 = ${addThem(2, 2, 1)}`);

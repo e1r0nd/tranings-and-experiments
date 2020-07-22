@@ -116,3 +116,64 @@ console.log(itDepartment.mostRecentReport);
 
 const employee1 = TheDepartment.createEmployee("tester");
 console.log(employee1);
+
+/** Interface */
+console.log(">>> Interface");
+
+interface Person {
+  name: string;
+  age: number;
+
+  greet(phrase: string): void;
+}
+
+let person1: Person;
+
+person1 = {
+  name: "Hans",
+  age: 10,
+  greet(phrase: string) {
+    console.log(`${this.name} says ${phrase}`);
+  },
+};
+
+person1.greet("YOLO!");
+
+console.log(">>> Interface with Class");
+interface Employee {
+  position: string;
+}
+
+interface Android {
+  readonly type: string;
+}
+
+interface Cyborg extends Android {
+  readonly brainType: string;
+}
+
+class Robot implements Employee, Cyborg {
+  constructor(name: string, position: string) {
+    this.name = name;
+    this.position = position;
+    this.type = "Android";
+    this.brainType = "T1000";
+  }
+  name: string;
+  position: string;
+  type: string;
+  brainType: string;
+}
+
+const robot1: Robot = new Robot("C3PO", "Navigator");
+console.log(robot1);
+
+console.log("Function Interface");
+interface AddFn {
+  (n1: number, n2: number, n3?: number): number;
+}
+const addThem: AddFn = (a: number, b: number, c?: number) =>
+  c ? a + b + c : a + b;
+
+console.log(`2 + 2 = ${addThem(2, 2)}`);
+console.log(`2 + 2 + 1 = ${addThem(2, 2, 1)}`);
