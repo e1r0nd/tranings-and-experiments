@@ -1,43 +1,58 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /** Basic Classes */
 console.log(">>> Basic Classes");
-class Department {
-    constructor(n) {
+var Department = /** @class */ (function () {
+    function Department(n) {
         this.name = n;
     }
-    describe() {
+    Department.prototype.describe = function () {
         console.log("Department:" + this.name);
-    }
-}
-const accounting = new Department("Accounting");
+    };
+    return Department;
+}());
+var accounting = new Department("Accounting");
 console.log(accounting);
 accounting.describe();
-const accountingCopy = { name: "some", describe: accounting.describe };
+var accountingCopy = { name: "some", describe: accounting.describe };
 accountingCopy.describe();
 /** Private, Public & Protected fields */
-class TheDepartment {
-    constructor(id, n) {
+var TheDepartment = /** @class */ (function () {
+    function TheDepartment(id, n) {
         this.id = id;
         this.employees = [];
         this.availableEmployees = [];
         this.name = n;
-        this.id = `#${id}`;
+        this.id = "#" + id;
     }
-    describe() {
+    TheDepartment.prototype.describe = function () {
         // this.id = "2"; <<< Error
-        console.log(`Department${this.id}: ${this.name}`);
-    }
-    employee(employee) {
+        console.log("Department" + this.id + ": " + this.name);
+    };
+    TheDepartment.prototype.employee = function (employee) {
         this.employees.push(employee);
-    }
-    printEmployeeInformation() {
+    };
+    TheDepartment.prototype.printEmployeeInformation = function () {
         console.log(this.employees.length);
         console.log(this.employees);
-    }
-    static createEmployee(name) {
-        return { name };
-    }
-}
-const development = new TheDepartment("1", "Development");
+    };
+    TheDepartment.createEmployee = function (name) {
+        return { name: name };
+    };
+    return TheDepartment;
+}());
+var development = new TheDepartment("1", "Development");
 console.log(development);
 development.employee("Programmer");
 development.employee("Manager");
@@ -46,72 +61,82 @@ development.describe();
 development.printEmployeeInformation();
 /** Inheritance & Protected fields*/
 console.log(">>> Inheritance");
-class ITDepartment extends TheDepartment {
-    constructor(id, admins, reports) {
-        super(id, "IT");
-        this.admins = [];
-        this.admins = admins;
+var ITDepartment = /** @class */ (function (_super) {
+    __extends(ITDepartment, _super);
+    function ITDepartment(id, admins, reports) {
+        var _this = _super.call(this, id, "IT") || this;
+        _this.admins = [];
+        _this.admins = admins;
         // this.employees.push("hah!"); <<< Error
-        this.reports = reports;
-        this.lastReport = reports[0];
+        _this.reports = reports;
+        _this.lastReport = reports[0];
+        return _this;
     }
-    addAvailableEmployee(name) {
+    ITDepartment.prototype.addAvailableEmployee = function (name) {
         this.availableEmployees.push(name);
-    }
-    printAvailableEmployees() {
+    };
+    ITDepartment.prototype.printAvailableEmployees = function () {
         console.log(this.availableEmployees);
-    }
-    addReport(text) {
+    };
+    ITDepartment.prototype.addReport = function (text) {
         this.reports.push(text);
         this.lastReport = text;
-    }
-    get mostRecentReport() {
-        if (this.lastReport) {
-            return this.lastReport;
-        }
-        else {
-            throw new Error("No reports found!");
-        }
-    }
-    set mostRecentReport(value) {
-        if (!value) {
-            throw new Error("No report provided.");
-        }
-        this.addReport(value);
-    }
-}
-const itDepartment = new ITDepartment("0", ["root"], []);
+    };
+    Object.defineProperty(ITDepartment.prototype, "mostRecentReport", {
+        get: function () {
+            if (this.lastReport) {
+                return this.lastReport;
+            }
+            else {
+                throw new Error("No reports found!");
+            }
+        },
+        set: function (value) {
+            if (!value) {
+                throw new Error("No report provided.");
+            }
+            this.addReport(value);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return ITDepartment;
+}(TheDepartment));
+var itDepartment = new ITDepartment("0", ["root"], []);
 console.log(itDepartment.describe());
 itDepartment.addAvailableEmployee("Mad Max");
 itDepartment.printAvailableEmployees();
 itDepartment.addReport("first");
 itDepartment.mostRecentReport = "second one";
 console.log(itDepartment.mostRecentReport);
-const employee1 = TheDepartment.createEmployee("tester");
+var employee1 = TheDepartment.createEmployee("tester");
 console.log(employee1);
 /** Interface */
 console.log(">>> Interface");
-let person1;
+var person1;
 person1 = {
     name: "Hans",
     age: 10,
-    greet(phrase) {
-        console.log(`${this.name} says ${phrase}`);
-    },
+    greet: function (phrase) {
+        console.log(this.name + " says " + phrase);
+    }
 };
 person1.greet("YOLO!");
 console.log(">>> Interface with Class");
-class Robot {
-    constructor(name, position) {
+var Robot = /** @class */ (function () {
+    function Robot(name, position) {
         this.name = name;
         this.position = position;
         this.type = "Android";
         this.brainType = "T1000";
     }
-}
-const robot1 = new Robot("C3PO", "Navigator");
+    return Robot;
+}());
+var robot1 = new Robot("C3PO", "Navigator");
 console.log(robot1);
 console.log("Function Interface");
-const addThem = (a, b, c) => c ? a + b + c : a + b;
-console.log(`2 + 2 = ${addThem(2, 2)}`);
-console.log(`2 + 2 + 1 = ${addThem(2, 2, 1)}`);
+var addThem = function (a, b, c) {
+    return c ? a + b + c : a + b;
+};
+console.log("2 + 2 = " + addThem(2, 2));
+console.log("2 + 2 + 1 = " + addThem(2, 2, 1));

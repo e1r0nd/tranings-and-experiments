@@ -76,3 +76,40 @@ function moveAnimal(animal) {
     console.log("Moving like " + speed);
 }
 moveAnimal({ type: "bird", flyingSpeed: 10 });
+var errorBag = {
+    error: "Ops",
+    username: "user1"
+};
+function sumIt(a, b) {
+    // return a + b; <<< Error
+    if (typeof a === "string" && typeof b === "string") {
+        return a.concat(b);
+    }
+    else {
+        return +a + +b;
+    }
+}
+var names = sumIt("Max", " Schwarz");
+console.log(names.split(" "));
+/** Optional chaining */
+/*
+const fetchedUser1 = {
+  username: "user1",
+  email: "mail@me.com",
+  job: { title: "CEO" },
+};
+const fetchedUser2 = {
+  username: "user1",
+  email: "mail@me.com",
+  status: "active",
+};
+
+[fetchedUser1, fetchedUser2].forEach((user) => {
+  console.log("User's title: ", user?.job.title);
+});
+*/
+/** Nullish coalition */
+var something1 = "";
+console.log("Nullish #1: ", something1 !== null && something1 !== void 0 ? something1 : "DEFAULT");
+var something2 = undefined;
+console.log("Nullish #2: ", something2 !== null && something2 !== void 0 ? something2 : "DEFAULT");

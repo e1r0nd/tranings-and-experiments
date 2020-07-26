@@ -10,5 +10,11 @@ You need TypeScript installed
 
 ```bash
 cd 2-Types-Basics
+tsc script.ts && node script.js
+
+cd ../2-Types-Basics
 tsc --target ES6 script.ts && node script.js
+
+cd ..
+tsc 6-Advanced-Types/script.ts && node 6-Advanced-Types/script.js
 ```
