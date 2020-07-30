@@ -12,9 +12,15 @@ You need TypeScript installed
 cd 2-Types-Basics
 tsc script.ts && node script.js
 
-cd ../2-Types-Basics
+cd ../5-Classes-Interfaces
 tsc --target ES6 script.ts && node script.js
 
 cd ..
 tsc 6-Advanced-Types/script.ts && node 6-Advanced-Types/script.js
+
+pwd
+~/tranings-and-experiments/TypeScript/Udemy
+tsc -w
+cd 7-Generics
+node script.js
 ```
