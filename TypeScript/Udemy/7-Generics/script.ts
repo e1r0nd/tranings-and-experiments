@@ -23,3 +23,24 @@ const mergedObject = merge({ name: "Max" }, { position: "developer" });
 console.log(mergedObject);
 
 const name1 = mergedObject.name;
+
+interface Lengthy {
+  length: number;
+}
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
+  let descriptionText = "Got no value";
+  if (element.length > 0) {
+    descriptionText = `Got ${element.length} element(s)`;
+  }
+  return [element, descriptionText];
+}
+console.log(countAndDescribe("Hi there"));
+console.log(countAndDescribe(["Sports", "Cooking"]));
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return obj[key];
+}
+console.log(extractAndConvert({ name: "Max" }, "name"));

@@ -157,8 +157,8 @@
         "affectsGlobalScope": true
       },
       "./7-generics/script.ts": {
-        "version": "2cc02758a7c5a1545a517a985f435008f3c97acf7065dc88e2f4a0a7b7cec778",
-        "signature": "317376a70c13d878342f9fe9420142e39e7df8cff3ea9d141ac55517011e5141",
+        "version": "0e5ddabe0c12bf0e8f8a4ce01501cc29e8bc199ef11e1356de834b1a25673f66",
+        "signature": "41d8f21d7119047a545d34dcbdcfc84a8af216deb67889ed935a2fb603e9c4d0",
         "affectsGlobalScope": true
       }
     },

@@ -14,4 +14,19 @@ console.log(">>> Generic Functions");
 function merge(objA, objB) {
     return Object.assign(objA, objB);
 }
-console.log(merge({ name: "Max" }, { position: "developer" }));
+const mergedObject = merge({ name: "Max" }, { position: "developer" });
+console.log(mergedObject);
+const name1 = mergedObject.name;
+function countAndDescribe(element) {
+    let descriptionText = "Got no value";
+    if (element.length > 0) {
+        descriptionText = `Got ${element.length} element(s)`;
+    }
+    return [element, descriptionText];
+}
+console.log(countAndDescribe("Hi there"));
+console.log(countAndDescribe(["Sports", "Cooking"]));
+function extractAndConvert(obj, key) {
+    return obj[key];
+}
+console.log(extractAndConvert({ name: "Max" }, "name"));
