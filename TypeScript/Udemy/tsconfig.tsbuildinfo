@@ -160,6 +160,11 @@
         "version": "19d829313ec932a6b989bc8c993b8fc5cc25eb2b8c00b159a20189aabf138a95",
         "signature": "f8aa0495099d434a884c9961f264fcdebdbdfe0f76fa08e6d98bbb3111c105e4",
         "affectsGlobalScope": true
+      },
+      "./8-decorators/script.ts": {
+        "version": "175efaad513846e599f6935384e37c92f84073275998d02c4c13dc8a94b481a1",
+        "signature": "c864e449c651c5ece9d91409cdf9e9951c19a8103250ff72e5c5b4e3641a6297",
+        "affectsGlobalScope": true
       }
     },
     "options": {
@@ -174,6 +179,7 @@
       ],
       "strict": true,
       "esModuleInterop": true,
+      "experimentalDecorators": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "watch": true,
@@ -213,7 +219,8 @@
       "./2-types-basics/script.ts",
       "./5-classes-interfaces/script.ts",
       "./6-advanced-types/script.ts",
-      "./7-generics/script.ts"
+      "./7-generics/script.ts",
+      "./8-decorators/script.ts"
     ]
   },
   "version": "3.9.7"
