@@ -165,6 +165,11 @@
         "version": "175efaad513846e599f6935384e37c92f84073275998d02c4c13dc8a94b481a1",
         "signature": "c864e449c651c5ece9d91409cdf9e9951c19a8103250ff72e5c5b4e3641a6297",
         "affectsGlobalScope": true
+      },
+      "./9-demo/src/app.ts": {
+        "version": "9f2684ae2ac3c37ce60ebc12affbac6a731a2dace6ce32b666c5ef220c039ef6",
+        "signature": "dd5188722b42028634b0c30e805c10bb7cd68e78cf2ab08ea681a612c9377c62",
+        "affectsGlobalScope": true
       }
     },
     "options": {
@@ -220,7 +225,8 @@
       "./5-classes-interfaces/script.ts",
       "./6-advanced-types/script.ts",
       "./7-generics/script.ts",
-      "./8-decorators/script.ts"
+      "./8-decorators/script.ts",
+      "./9-demo/src/app.ts"
     ]
   },
   "version": "3.9.7"
