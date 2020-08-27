@@ -167,8 +167,8 @@
         "affectsGlobalScope": true
       },
       "./9-demo/src/app.ts": {
-        "version": "ac3a12379d717fbd5767b19a37fdb036198aefa77589b03cf812ad8dadff25f3",
-        "signature": "048aaad2c6af930ea3e6ca66f6acc5d0aaef2b74c5844e14066320e4a42f6094",
+        "version": "0a336d4a4c69fb64180de1ff9716356aa1450ad99eed88baf4c87b6621eda7ea",
+        "signature": "3c02de39905c87b28d5d90adf2c6e00f9322c862900f2ff364a2c52e89d173da",
         "affectsGlobalScope": true
       }
     },
