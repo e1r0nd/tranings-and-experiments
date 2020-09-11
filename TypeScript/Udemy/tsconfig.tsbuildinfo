@@ -166,19 +166,54 @@
         "signature": "c864e449c651c5ece9d91409cdf9e9951c19a8103250ff72e5c5b4e3641a6297",
         "affectsGlobalScope": true
       },
-      "./9-demo/src/drag-drop-interface.ts": {
+      "./9-demo/src/models/drag-drop.ts": {
         "version": "321509842c55c5ad568274ec269da92ef108db351e8e66e4dcbf0ca716d33524",
         "signature": "d7b9ad2666529a6996132a4a5bb829c779a9b805a2c380fae643f4a26a8f33ed",
         "affectsGlobalScope": true
       },
-      "./9-demo/src/project-model.ts": {
+      "./9-demo/src/models/project.ts": {
         "version": "ab87ad6931d4097ab3260d5648fe43de58165cbeb5ddd3a10bb187e49bb26829",
         "signature": "ee01280dd400803222bed63445786b6c9f4cf907ba404f41b43e94a28e77204f",
         "affectsGlobalScope": true
       },
+      "./9-demo/src/state/project-state.ts": {
+        "version": "e861b46285e8420a57e193f77f3f7f6c5be4ffa5e102a43828b0a9a7c63145a4",
+        "signature": "b6ddae3dd6dd038345edb14fe73c7f84bb5dca41cffbeb6adeb48a7b189cf61c",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/util/validation.ts": {
+        "version": "6d1f87ced7234ce1afe0bffc6be21e84974402e5fa03784ae5a666e3da7b8f2a",
+        "signature": "2ea4921e88d7367a1a9466b376227a512d88e34da505ce6ebbf6c9d3fe0fdd0e",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/decorators/autobind.ts": {
+        "version": "5c6a7bf9ac70a957cbe03b21e8b5b56ed8fa012bd9ac4cd54d18f2693e797990",
+        "signature": "b9faf5c9ec2cc5f4dba54a3dce39c6a6a6a96b10a16dcc4375a698bae652beef",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/components/base-components.ts": {
+        "version": "5c6e7d11b3341d0d3d9bba4dacb06a75a27caf70d6f3c18a5ed34de28b69da96",
+        "signature": "e6e359c76c5d65bd31459ea1ea5f90694ba3dfb43902ce2d181ed5eb49ad1b80",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/components/project-list.ts": {
+        "version": "3269ae6ca87779bc54046845c50e28e0398755c0e3d2585bbfbc8c2c3d74f6f8",
+        "signature": "decc5cb293f09bed51a70d668d03415c8df1a3b1d754bdc2892e7e1d0d14d338",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/components/project-input.ts": {
+        "version": "9894e2b240d3ecb73dd11b7a8c41f4fa6bdda2ba7490793d7b8123e152b1e7f3",
+        "signature": "4049a5b902cd4541b72595163054be0bc4df5919a17f9c814d2873c482fcf5e2",
+        "affectsGlobalScope": true
+      },
       "./9-demo/src/app.ts": {
-        "version": "8bcfc58d013f39fbd6e832bca7cad8fccc8c94a9992bf586f294d0bc5154e77f",
-        "signature": "ddc78310d488bdfb1ea38c813eb34b91863515885db1cfadfecd2f5979da8c94",
+        "version": "c99bcc9af1d77f0a87866db3123654b0d7de86231fd585ae0358c1395833275a",
+        "signature": "d3018c9b1298d0669028cbad259c34d1d992a249384ad54e7562fddb1644c5eb",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/components/project-item.ts": {
+        "version": "55f7768c1e6a6dc0ed5d4653a1952f91304ff6e7c0c5e8891ff820353031ec0a",
+        "signature": "ac0779aa5e19cb4e4d6efc19b1a9d7d1501e96a4be7d7f5efcbc3cbc622b2390",
         "affectsGlobalScope": true
       }
     },
@@ -202,8 +237,23 @@
     },
     "referencedMap": {
       "./9-demo/src/app.ts": [
-        "./9-demo/src/drag-drop-interface.ts",
-        "./9-demo/src/project-model.ts"
+        "./9-demo/src/components/base-components.ts",
+        "./9-demo/src/components/project-input.ts",
+        "./9-demo/src/components/project-list.ts",
+        "./9-demo/src/decorators/autobind.ts",
+        "./9-demo/src/models/drag-drop.ts",
+        "./9-demo/src/models/project.ts",
+        "./9-demo/src/state/project-state.ts",
+        "./9-demo/src/util/validation.ts"
+      ],
+      "./9-demo/src/components/project-input.ts": [
+        "./9-demo/src/components/base-components.ts"
+      ],
+      "./9-demo/src/components/project-item.ts": [
+        "./9-demo/src/components/base-components.ts"
+      ],
+      "./9-demo/src/components/project-list.ts": [
+        "./9-demo/src/components/base-components.ts"
       ]
     },
     "exportedModulesMap": {},
@@ -242,8 +292,15 @@
       "./7-generics/script.ts",
       "./8-decorators/script.ts",
       "./9-demo/src/app.ts",
-      "./9-demo/src/drag-drop-interface.ts",
-      "./9-demo/src/project-model.ts"
+      "./9-demo/src/components/base-components.ts",
+      "./9-demo/src/components/project-input.ts",
+      "./9-demo/src/components/project-item.ts",
+      "./9-demo/src/components/project-list.ts",
+      "./9-demo/src/decorators/autobind.ts",
+      "./9-demo/src/models/drag-drop.ts",
+      "./9-demo/src/models/project.ts",
+      "./9-demo/src/state/project-state.ts",
+      "./9-demo/src/util/validation.ts"
     ]
   },
   "version": "3.9.7"
