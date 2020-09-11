@@ -166,9 +166,19 @@
         "signature": "c864e449c651c5ece9d91409cdf9e9951c19a8103250ff72e5c5b4e3641a6297",
         "affectsGlobalScope": true
       },
+      "./9-demo/src/drag-drop-interface.ts": {
+        "version": "321509842c55c5ad568274ec269da92ef108db351e8e66e4dcbf0ca716d33524",
+        "signature": "d7b9ad2666529a6996132a4a5bb829c779a9b805a2c380fae643f4a26a8f33ed",
+        "affectsGlobalScope": true
+      },
+      "./9-demo/src/project-model.ts": {
+        "version": "ab87ad6931d4097ab3260d5648fe43de58165cbeb5ddd3a10bb187e49bb26829",
+        "signature": "ee01280dd400803222bed63445786b6c9f4cf907ba404f41b43e94a28e77204f",
+        "affectsGlobalScope": true
+      },
       "./9-demo/src/app.ts": {
-        "version": "f05c50157abdebfaf0e8e4cd4ad27edc595dcfd3ed99b3a2d5ec3fd97d90b6db",
-        "signature": "ade4978ca87033e3259d68e0138062d7ea817fcb55bb90a7572763bce2f6c7d0",
+        "version": "8bcfc58d013f39fbd6e832bca7cad8fccc8c94a9992bf586f294d0bc5154e77f",
+        "signature": "ddc78310d488bdfb1ea38c813eb34b91863515885db1cfadfecd2f5979da8c94",
         "affectsGlobalScope": true
       }
     },
@@ -190,7 +200,12 @@
       "watch": true,
       "configFilePath": "./tsconfig.json"
     },
-    "referencedMap": {},
+    "referencedMap": {
+      "./9-demo/src/app.ts": [
+        "./9-demo/src/drag-drop-interface.ts",
+        "./9-demo/src/project-model.ts"
+      ]
+    },
     "exportedModulesMap": {},
     "semanticDiagnosticsPerFile": [
       "../../../../.nvm/versions/node/v12.18.2/lib/node_modules/typescript/lib/lib.dom.d.ts",
@@ -226,7 +241,9 @@
       "./6-advanced-types/script.ts",
       "./7-generics/script.ts",
       "./8-decorators/script.ts",
-      "./9-demo/src/app.ts"
+      "./9-demo/src/app.ts",
+      "./9-demo/src/drag-drop-interface.ts",
+      "./9-demo/src/project-model.ts"
     ]
   },
   "version": "3.9.7"
