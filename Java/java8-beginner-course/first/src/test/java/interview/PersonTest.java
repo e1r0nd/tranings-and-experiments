@@ -39,4 +39,10 @@ public class PersonTest {
             assertEquals(str, persons[i].hello());
         }
     }
+
+    @Test
+    public void shouldCheckLoggingLevel() {
+        LoggingLevel testString = LoggingLevel.PROCESSED;
+        assertEquals(LoggingLevel.PROCESSED, testString);
+    }
 }
