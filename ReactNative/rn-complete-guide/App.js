@@ -1,21 +1,12 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  FlatList,
-  TextInput,
-  Text,
-  Button,
-} from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
+
+import GoalItem from "./components/GoalItem";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [courseGoals, setCourseGoals] = useState([]);
-
-  function goalInputHandler(enteredText) {
-    setEnteredGoal(enteredText);
-  }
 
   function addGoalHandler() {
     setCourseGoals((currentGoals) => [
@@ -24,23 +15,27 @@ export default function App() {
     ]);
   }
 
+  function removeGoalHandler(id) {
+    setCourseGoals((currentGoals) =>
+      currentGoals.filter((goal) => goal.key !== id)
+    );
+  }
+
   return (
     <View style={styles.screen}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Course Goal"
-          style={styles.input}
-          onChangeText={setEnteredGoal}
-          value={enteredGoal}
-        />
-        <Button title="ADD" onPress={addGoalHandler} />
-      </View>
+      <GoalInput
+        addGoalHandler={addGoalHandler}
+        setEnteredGoal={setEnteredGoal}
+        enteredGoal={enteredGoal}
+      />
       <FlatList
         data={courseGoals}
         renderItem={(data) => (
-          <View style={{ marginVertical: 30 }}>
-            <Text>{data.item.value}</Text>
-          </View>
+          <GoalItem
+            id={data.item.key}
+            onDelete={removeGoalHandler}
+            title={data.item.value}
+          />
         )}
       />
     </View>
@@ -50,17 +45,5 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     padding: 30,
-  },
-  inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  input: {
-    width: "80%",
-    borderBottomColor: "black",
-    borderBottomWidth: 1,
-    padding: 10,
-    marginBottom: 30,
   },
 });
