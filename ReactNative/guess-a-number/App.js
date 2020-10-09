@@ -20,7 +20,6 @@ export default function App() {
   const [guessRounds, setGuessRounds] = useState(0);
   const [dataLoaded, setDataLoaded] = useState(false);
 
-  console.log(">>> ", dataLoaded);
   if (!dataLoaded) {
     return (
       <AppLoading
@@ -59,6 +58,12 @@ export default function App() {
       />
     );
   }
+  content = (
+    <GameOverScreen
+      numOfRounds={guessRounds}
+      startNewGame={startNewGameHandler}
+    />
+  );
   return (
     <View style={styles.scree}>
       <Header title="Guess a Number"></Header>
