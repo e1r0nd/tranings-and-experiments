@@ -58,12 +58,7 @@ export default function App() {
       />
     );
   }
-  content = (
-    <GameOverScreen
-      numOfRounds={guessRounds}
-      startNewGame={startNewGameHandler}
-    />
-  );
+  
   return (
     <View style={styles.scree}>
       <Header title="Guess a Number"></Header>
