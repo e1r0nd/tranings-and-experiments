@@ -1,12 +1,31 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderNavButton from "../components/HeaderNavButton";
 
-const A = (props) => {
+const FiltersScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>Hello</Text>
+      <Text>The Filters Screen!</Text>
     </View>
   );
+};
+
+FiltersScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: "Filter Meals",
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderNavButton}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({
@@ -17,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default A;
+export default FiltersScreen;

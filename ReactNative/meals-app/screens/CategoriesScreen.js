@@ -2,6 +2,8 @@ import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderNavButton from "../components/HeaderNavButton";
 
 const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
@@ -12,7 +14,9 @@ const CategoriesScreen = (props) => {
         onSelect={() => {
           props.navigation.navigate({
             routeName: "CategoryMeals",
-            params: { categoryId: itemData.item.id },
+            params: {
+              categoryId: itemData.item.id,
+            },
           });
         }}
       />
@@ -20,8 +24,30 @@ const CategoriesScreen = (props) => {
   };
 
   return (
-    <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
+    <FlatList
+      keyExtractor={(item, index) => item.id}
+      data={CATEGORIES}
+      renderItem={renderGridItem}
+      numColumns={2}
+    />
   );
+};
+
+CategoriesScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: "Meal Categories",
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderNavButton}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({
@@ -29,11 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  gridItem: {
-    flex: 1,
-    margin: 15,
-    height: 150,
   },
 });
 
