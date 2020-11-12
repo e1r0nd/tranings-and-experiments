@@ -3,8 +3,16 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 
 import MealsNavigator from "./navigation/MealsNavigator";
+import mealsReducer from "./store/reducers/meals";
+
+const rootReducer = combineReducers({
+  meals: mealsReducer,
+});
+const store = createStore(rootReducer);
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -26,12 +34,14 @@ export default function App() {
   }
 
   return (
-    <MealsNavigator>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
-    </MealsNavigator>
+    <Provider store={store}>
+      <MealsNavigator>
+        <View style={styles.container}>
+          <Text>Open up App.js to start working on your app!</Text>
+          <StatusBar style="auto" />
+        </View>
+      </MealsNavigator>
+    </Provider>
   );
 }
 
