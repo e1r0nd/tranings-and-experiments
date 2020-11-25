@@ -1,0 +1,26 @@
+{
+  "blogApp": {
+    "post": {
+      "home": {
+        "title": "Posts",
+        "createLabel": "Создать новый Post",
+        "createOrEditLabel": "Создать или отредактировать Post",
+        "notFound": "No Posts found"
+      },
+      "created": "Новый Post создан с идентификатором {{ param }}",
+      "updated": "Post обновлен с идентификатором {{ param }}",
+      "deleted": "Post удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Post {{ id }}?"
+      },
+      "detail": {
+        "title": "Post"
+      },
+      "title": "Title",
+      "content": "Content",
+      "date": "Date",
+      "blog": "Blog",
+      "tag": "Tag"
+    }
+  }
+}
