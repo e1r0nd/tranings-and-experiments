@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customPage">
+            <h2><span jhiTranslate="jhipsterblogApp.customPage.detail.title">Custom Page</span> {{ customPage.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterblogApp.customPage.title">Title</span></dt>
+                <dd>
+                    <span>{{ customPage.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterblogApp.customPage.link">Link</span></dt>
+                <dd>
+                    <span>{{ customPage.link }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterblogApp.customPage.content">Content</span></dt>
+                <dd>
+                    <span>{{ customPage.content }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/custom-page', customPage.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+entity CustomPage {
+  title String required minlength(3)
+  link String required minlength(6)
+  content String
+}
+
+paginate CustomPage with infinite-scroll

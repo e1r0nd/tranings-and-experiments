@@ -1,0 +1,24 @@
+{
+  "jhipsterblogApp": {
+    "customPage": {
+      "home": {
+        "title": "Custom Pages",
+        "createLabel": "Создать новый Custom Page",
+        "createOrEditLabel": "Создать или отредактировать Custom Page",
+        "notFound": "No Custom Pages found"
+      },
+      "created": "Новый Custom Page создан с идентификатором {{ param }}",
+      "updated": "Custom Page обновлен с идентификатором {{ param }}",
+      "deleted": "Custom Page удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Custom Page {{ id }}?"
+      },
+      "detail": {
+        "title": "Custom Page"
+      },
+      "title": "Title",
+      "link": "Link",
+      "content": "Content"
+    }
+  }
+}
