@@ -1,14 +1,10 @@
-Vue.createApp({
+const app = Vue.createApp({
   data() {
     return {
-      goals: [],
-      enteredValue: "",
+      courseGoal: "Finish the course!",
+      vueLink: "https://vuejs.org/",
     };
   },
-  methods: {
-    addGoal() {
-      this.goals.push(this.enteredValue);
-      this.enteredValue = "";
-    },
-  },
-}).mount("#app");
+});
+
+app.mount("#user-goal");
