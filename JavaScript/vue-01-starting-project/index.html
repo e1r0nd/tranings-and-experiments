@@ -13,13 +13,36 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Vue Course Goals</h1>
-    </header>
-    <section id="user-goal">
-      <h2>My Course Goal</h2>
-      <p>{{ outputGoal() }}</p>
-      <p>Learn more <a v-bind:href="vueLink">about Vue</a>.</p>
+    <section>
+      <header>
+        <h1>Vue Course Goals</h1>
+      </header>
+      <section id="user-goal">
+        <h2>My Course Goal</h2>
+        <p>{{ outputGoal() }}</p>
+        <p>Learn more <a v-bind:href="vueLink">about Vue</a>.</p>
+      </section>
+    </section>
+    <section>
+      <header>
+        <h1>Vue Events</h1>
+      </header>
+      <section id="events">
+        <h2>Events in Action</h2>
+        <button v-on:click="add(5)">Add 5</button>
+        <button v-on:click="reduce(2)">Reduce 2</button>
+        <p>Result: {{ counter }}</p>
+        <input
+          type="text"
+          v-on:input="setName($event, 'mr.')"
+          v-on:keyup.enter="confirmInput"
+        />
+        <p>Your name: {{ name }}</p>
+        <form v-on:submit.prevent="submitForm">
+          <input type="text" v-bind:value="confirmedName" />
+          <button>Sign Up</button>
+        </form>
+      </section>
     </section>
   </body>
 </html>
