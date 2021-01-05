@@ -28,6 +28,20 @@ const eventsApp = Vue.createApp({
       confirmedName: "",
     };
   },
+  watch: {
+    name(newValue, oldValue) {
+      console.log(
+        `Name property has been changed from "${oldValue}" to "${newValue}"`
+      );
+    },
+  },
+  computed: {
+    fullname() {
+      console.log("fullname() has been fired!");
+      const thisName = this.name.trim().length ? this.name + "!" : "";
+      return thisName;
+    },
+  },
   methods: {
     add(num = 1) {
       this.counter += num;
@@ -35,14 +49,25 @@ const eventsApp = Vue.createApp({
     reduce(num = 1) {
       this.counter -= num;
     },
-    setName(event, prefix) {
-      this.name = prefix + " " + event.target.value;
+    setName(event) {
+      this.name = event.target.value;
+    },
+    outputFullName(prefix = "dr.") {
+      console.log("outputFullName() has been fired!");
+      if (this.name.trim().length) {
+        return prefix + " " + this.name;
+      } else {
+        return "";
+      }
     },
     confirmInput(event) {
       this.confirmedName = event.target.value;
     },
     submitForm() {
       alert("Form has been submitted!");
+    },
+    resetInput() {
+      this.name = "";
     },
   },
 });

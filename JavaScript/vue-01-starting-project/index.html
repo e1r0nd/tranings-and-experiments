@@ -32,13 +32,17 @@
         <button v-on:click="add(5)">Add 5</button>
         <button v-on:click="reduce(2)">Reduce 2</button>
         <p>Result: {{ counter }}</p>
-        <input
+        <!-- <input
           type="text"
-          v-on:input="setName($event, 'mr.')"
+          v-bind:value="name"
+          v-on:input="setName"
           v-on:keyup.enter="confirmInput"
-        />
-        <p>Your name: {{ name }}</p>
-        <form v-on:submit.prevent="submitForm">
+        /> -->
+        <input type="text" v-model="name" @keyup.enter="confirmInput" />
+        <button @click="resetInput">Reset Input</button>
+        <p>Your name: {{ outputFullName('dr.') }}</p>
+        <p>Computed name: {{ fullname }}</p>
+        <form @submit.prevent="submitForm">
           <input type="text" v-bind:value="confirmedName" />
           <button>Sign Up</button>
         </form>
