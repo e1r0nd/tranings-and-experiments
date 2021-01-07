@@ -32,12 +32,12 @@
         <button v-on:click="add(5)">Add 5</button>
         <button v-on:click="reduce(2)">Reduce 2</button>
         <p>Result: {{ counter }}</p>
-        <!-- <input
+        <input
           type="text"
           v-bind:value="name"
           v-on:input="setName"
           v-on:keyup.enter="confirmInput"
-        /> -->
+        />
         <input type="text" v-model="name" @keyup.enter="confirmInput" />
         <button @click="resetInput">Reset Input</button>
         <p>Your name: {{ outputFullName('dr.') }}</p>
@@ -46,6 +46,24 @@
           <input type="text" v-bind:value="confirmedName" />
           <button>Sign Up</button>
         </form>
+      </section>
+    </section>
+    <section>
+      <header>
+        <h1>Vue Dynamic Styling</h1>
+      </header>
+      <section id="styling">
+        <div
+          class="demo"
+          :class="{active: boxASelected}"
+          @click="boxSelected('A')"
+        ></div>
+        <div class="demo" :class="boxBClasses" @click="boxSelected('B')"></div>
+        <div
+          class="demo"
+          :style="{borderColor: boxCSelected ? 'red' : '#ccc'}"
+          @click="boxSelected('C')"
+        ></div>
       </section>
     </section>
   </body>
