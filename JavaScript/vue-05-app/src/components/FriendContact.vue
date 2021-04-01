@@ -13,11 +13,25 @@
 
 <script>
 export default {
-    props: [
-      'name',
-      'phoneNumber',
-      'emailAddress'
-    ],
+    props: {
+      name: {
+        type: String,
+        required: true
+      },
+      phoneNumber: {
+        type: String,
+        required: false,
+        default: 'unknown'
+      },
+      emailAddress: {
+        type: String,
+        required: false,
+        default: 'null@email.com',
+        validator: function(value) {
+          return value.includes('@');
+        }
+      }
+    },
     data() {
         return {
             detailsAreVisible: false,
