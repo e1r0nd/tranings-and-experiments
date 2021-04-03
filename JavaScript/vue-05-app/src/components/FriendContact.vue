@@ -8,12 +8,17 @@
             <li>Phone: {{ phoneNumber }}</li>
             <li>Email: {{ emailAddress }}</li>
         </ul>
+        <button @click="$emit('delete', id)">Delete</button>
     </li>
 </template>
 
 <script>
 export default {
     props: {
+      id: {
+        type: String,
+        required: true,
+      },
       name: {
         type: String,
         required: true
@@ -32,6 +37,7 @@ export default {
         }
       }
     },
+    emits: ['delete'],
     data() {
         return {
             detailsAreVisible: false,
@@ -77,7 +83,8 @@ header {
   list-style: none;
 }
 
-#app li {
+#app li,
+#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
