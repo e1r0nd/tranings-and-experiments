@@ -57,6 +57,7 @@ game-of-knight.js<br>
 [react-login](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/react-login) - no description :)<br>
 [react-tutorial-master](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/react-tutorial-master) - no description :)<br>
 [reactjs-tutorial](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/reactjs-tutorial) - no description :)<br>
+reactjs-tutorial<br>
 [redux-remake](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/redux-remake) - no description :)<br>
 [Sick Fits](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/sick-fits--wesbos-advanced-react) - Full Stack [React Advanced](https://advancedreact.com/)<br>
 [start](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/start) - no description :)<br>
@@ -69,6 +70,12 @@ game-of-knight.js<br>
 [rn-first](https://github.com/e1r0nd/tranings-and-experiments/tree/master/ReactNative/rn-first) from [React Native - The Practical Guide](https://www.udemy.com/course/react-native-the-practical-guide/)<br>
 
 ## Vue
+vue-01-starting-project<br>
+vue-02-task<br>
+vue-03-monster<br>
+vue-04-components<br>
+vue-05-app<br>
+
 # NodeJS
 
 [firebase-node](https://github.com/e1r0nd/tranings-and-experiments/tree/master/NodeJS/firebase-node) Node.js apps on Firebase Hosting Crash Course - Firecasts https://www.youtube.com/watch?v=LOeioOKUKI8<br>
