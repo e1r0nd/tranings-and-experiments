@@ -52,6 +52,7 @@ game-of-knight.js<br>
 [google-map-youtube](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/google-map-youtube) - React + Google map example<br>
 [hello-world](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/hello-world) - React hello world<br>
 [learn-redux](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/learn-redux) - from [Learn Redux](https://learnredux.com/)<br>
+react-create-app<br>
 [react-hooks-basics](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/react-hooks-basics) - no description :)<br>
 [react-intro](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/react-intro) - no description :)<br>
 [react-login](https://github.com/e1r0nd/tranings-and-experiments/tree/master/React-Redux/react-login) - no description :)<br>
