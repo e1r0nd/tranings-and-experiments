@@ -25,7 +25,7 @@ func main() {
 	sonic.print()
 
 	var ustas person
-	ustas.firstName = "UStas"
+	ustas.firstName = "Ustas"
 	ustas.lastName = "Nemo"
 }
 
@@ -33,6 +33,6 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
+func (p *person) updateName(newFirstName string) {
 	p.firstName = newFirstName
 }
