@@ -13,6 +13,9 @@ type person struct {
 	contact   contactInfo
 }
 
+type km float64
+type mile float64
+
 func main() {
 	alex := person{"Alex", "Anderson", contactInfo{"", 0}}
 	alex.print()
@@ -27,6 +30,17 @@ func main() {
 	var ustas person
 	ustas.firstName = "Ustas"
 	ustas.lastName = "Nemo"
+
+	// types
+	var parisToLondon km = 465
+	var distanceInMile mile
+
+	distanceInMile = mile(parisToLondon) / 0.621
+	fmt.Println("\nmile:", distanceInMile)
+
+	if true {
+		fmt.Println("TRUE")
+	}
 }
 
 func (p person) print() {
