@@ -32,4 +32,20 @@ func main() {
 		3: 111,
 	}
 	fmt.Printf("%#v\n", a4)
+
+	// compare slices
+	eq := true
+	s1, s2, s3 := []int{1, 2, 3}, []int{1}, []int{2, 3}
+	s2 = append(s2, s3...)
+	for i, valueS1 := range s1 {
+		if valueS1 != s2[i] {
+			eq = false
+			break
+		}
+	}
+	if len(s1) != len(s2) {
+		eq = false
+	}
+	fmt.Printf("%v; %v -> ", s1, s2)
+	fmt.Println("The are equal?", eq)
 }
