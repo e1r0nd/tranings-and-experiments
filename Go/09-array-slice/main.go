@@ -48,4 +48,19 @@ func main() {
 	}
 	fmt.Printf("%v; %v -> ", s1, s2)
 	fmt.Println("The are equal?", eq)
+
+	// array slice
+	arr1 := [5]int{1, 2, -1, -5, 0} // array
+	slice1 := arr1[1:3]             // array[start:stop] start - include, stop - exclude
+	fmt.Printf("%v, %T\n", slice1, slice1)
+	slice2 := arr1[:4] // from the beginning
+	slice3 := arr1[:]  // copy
+	slice3 = append(slice3, 100)
+	fmt.Printf("%v, %v\n", slice2, slice3)
+
+	// Modify the original array
+	sl1 := []int{10, 20, 30, 40} // slice
+	sl2, sl3 := sl1[:], sl1[:]
+	sl3[1] = 600 // this modifies the original array
+	fmt.Printf("sl1:%v, sl2:%v, sl3:%v\n", sl1, sl2, sl3)
 }
