@@ -30,6 +30,19 @@ func main() {
 	var ustas person
 	ustas.firstName = "Ustas"
 	ustas.lastName = "Nemo"
+	fmt.Printf("\n%v %v\n", ustas.firstName, ustas.lastName)
+	fmt.Printf("---\n%+v\n", ustas)
+
+	// Anonymous struct
+	diana := struct {
+		firstName, lastName string
+		age                 int
+	}{
+		firstName: "Diana",
+		lastName:  "Mueller",
+		age:       30,
+	}
+	fmt.Println(diana)
 
 	// types
 	var parisToLondon km = 465
