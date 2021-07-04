@@ -16,6 +16,9 @@ https://www.youtube.com/playlist?list=PL0lO_mIqDDFXNfqIL9PHQM7Wg_kOtDZsW
 [CSS Grid Video Course](https://github.com/e1r0nd/tranings-and-experiments/tree/master/CSS/grid-css): These are the starter files and finished solutions. Grab the full course over at http://CSSGrid.io.
 
 # Go
+
+From Udemy: Master Go (Golang) Programming:The Complete Go Bootcamp 2021
+
 # Java
 
 [Java Full Course](https://github.com/e1r0nd/tranings-and-experiments/tree/master/Java/java-se-beginner-course) Java Full Course | Java Tutorial for Beginners [2020] [NEW] https://www.youtube.com/watch?v=Qgl81fPcLc8<br>
