@@ -1,0 +1,30 @@
+version: "3"
+services: 
+    mysql_db_container:
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword
+        ports:
+            - 3306:3306
+        volumes:
+            - mysql_db_data_container:/var/lib/mysql
+
+    # http://localhost:9000/
+    # System: MySQL
+    # Server: mysql
+    # User: root
+    # Password: rootpassword
+    # Database: mysql
+    adminer:
+        image: adminer
+        restart: always
+        environment:
+            ADMINER_DEFAULT_SERVER: mysql_db_container
+        depends_on:
+            - mysql_db_container
+        ports:
+            - "9000:8080"
+
+volumes:
+    mysql_db_data_container:

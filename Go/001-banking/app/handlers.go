@@ -29,7 +29,7 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, req *http.Req
 	// 	{Name: "Robert", City: "London", Zipcode: "01001"},
 	// 	{Name: "Elena", City: "Moscow", Zipcode: "12322"},
 	// }
-	customers, _ := ch.service.GetAllCustomers()
+	customers, _ := ch.service.GetAllCustomer()
 
 	if req.Header.Get("Content-Type") == "application/xml" {
 		w.Header().Add("Content-type", "application/xml")
