@@ -10,12 +10,6 @@ services:
         volumes:
             - mysql_db_data_container:/var/lib/mysql
 
-    # http://localhost:9000/
-    # System: MySQL
-    # Server: mysql
-    # User: root
-    # Password: rootpassword
-    # Database: mysql
     adminer:
         image: adminer
         restart: always

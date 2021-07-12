@@ -17,12 +17,14 @@ func Start() {
 	ch := CustomerHandlers{service.NewCustomerService(domain.NewCustomerRepositoryDB())}
 
 	// define routes
+	router.HandleFunc("/greet", greet).Methods(http.MethodGet)
+
 	router.HandleFunc("/customers", ch.getAllCustomers).Methods(http.MethodGet)
 	router.HandleFunc("/customers/", ch.getAllCustomers).Methods(http.MethodGet)
 
-	router.HandleFunc("/greet", greet).Methods(http.MethodGet)
+	router.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
+
 	router.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
-	router.HandleFunc("/customers/{customer_id:[0-9]*}", getCustomer).Methods(http.MethodGet)
 
 	// run server
 	fmt.Println("Server started at http://localhost:8000")

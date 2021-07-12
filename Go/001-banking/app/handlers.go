@@ -38,7 +38,25 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, req *http.Req
 		w.Header().Add("Content-type", "application/json")
 		json.NewEncoder(w).Encode(customers)
 	}
+}
 
+// Get customer by id
+func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["customer_id"]
+	customer, err := ch.service.GetCustomer(id)
+	if err != nil {
+		http.Error(w, err.Message, err.Code)
+		return
+	}
+
+	if r.Header.Get("Content-Type") == "application/xml" {
+		w.Header().Add("Content-type", "application/xml")
+		xml.NewEncoder(w).Encode(customer)
+	} else {
+		w.Header().Add("Content-type", "application/json")
+		json.NewEncoder(w).Encode(customer)
+	}
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
