@@ -13,12 +13,20 @@ type CustomerRepositoryDB struct {
 	client *sql.DB
 }
 
-func (d CustomerRepositoryDB) FindAll() ([]Customer, error) {
-	findAllSql := "SELECT customer_id, name, city, zipcode, date_of_birth, status FROM customers"
-	rows, err := d.client.Query(findAllSql)
+func (d CustomerRepositoryDB) FindAll(status string) ([]Customer, *errs.AppError) {
+	var rows *sql.Rows
+	var err error
+
+	if status == "" {
+		findAllSql := "SELECT customer_id, name, city, zipcode, date_of_birth, status FROM customers"
+		rows, err = d.client.Query(findAllSql)
+	} else {
+		findAllSql := "SELECT customer_id, name, city, zipcode, date_of_birth, status FROM customers WHERE status = ?"
+		rows, err = d.client.Query(findAllSql, status)
+	}
 	if err != nil {
 		log.Println("Error:", err.Error())
-		return nil, err
+		return nil, errs.NewUnexpectedError("Server Internal Error")
 	}
 
 	customers := make([]Customer, 0)
@@ -27,7 +35,7 @@ func (d CustomerRepositoryDB) FindAll() ([]Customer, error) {
 		err = rows.Scan(&c.Id, &c.Name, &c.City, &c.Zipcode, &c.DateOfBirth, &c.Status)
 		if err != nil {
 			log.Println("Error:", err.Error())
-			return nil, err
+			return nil, errs.NewUnexpectedError("Server Internal Error")
 		}
 		customers = append(customers, c)
 	}
