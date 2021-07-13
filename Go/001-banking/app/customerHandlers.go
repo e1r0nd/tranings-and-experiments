@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
-	"log"
 	"net/http"
 
+	"github.com/e1r0nd/banking/logger"
 	"github.com/e1r0nd/banking/service"
 	"github.com/gorilla/mux"
 )
@@ -20,7 +20,7 @@ func greet(w http.ResponseWriter, req *http.Request) {
 }
 
 func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Request) {
-	log.Println("Get all customers")
+	logger.Debug("Get all customers")
 	status := r.URL.Query().Get("status")
 	customers, err := ch.service.GetAllCustomer(status)
 
@@ -40,7 +40,7 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reque
 
 // Get customer by id
 func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) {
-	log.Println("Get customer")
+	logger.Debug("Get customer")
 	vars := mux.Vars(r)
 	id := vars["customer_id"]
 	customer, err := ch.service.GetCustomer(id)

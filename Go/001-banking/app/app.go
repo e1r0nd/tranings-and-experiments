@@ -1,11 +1,11 @@
 package app
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
 	"github.com/e1r0nd/banking/domain"
+	"github.com/e1r0nd/banking/logger"
 	"github.com/e1r0nd/banking/service"
 	"github.com/gorilla/mux"
 )
@@ -27,6 +27,6 @@ func Start() {
 	router.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
 
 	// run server
-	fmt.Println("Server started at http://localhost:8000")
+	logger.Info("Server started at http://localhost:8000")
 	log.Fatal(http.ListenAndServe("localhost:8000", router))
 }
