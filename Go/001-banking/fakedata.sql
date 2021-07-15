@@ -23,19 +23,18 @@ DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE `accounts` (
     `account_id` INT(11) NOT NULL AUTO_INCREMENT,
     `customer_id` INT(11) NOT NULL,
-    `transaction_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `opening_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `account_type` VARCHAR(255) NOT NULL,
-    `balance` DECIMAL(10,2) NOT NULL,
+    `amount` DECIMAL(10,2) NOT NULL,
+    `status` TINYINT(1) NOT NULL DEFAULT '1',
     PRIMARY KEY (`account_id`),
     INDEX `customer_id` (`customer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 INSERT INTO `accounts` VALUES
-    (100, 2000, '2020-02-27 10:07:10', 'Saving', 0.00),
-    (200, 2000, '2021-01-17 11:57:20', 'Checking', 0.00),
-    (300, 2001, '2020-03-20 15:25:34', 'Saving', 0.00),
-    (400, 2001, '2019-01-22 12:23:55', 'Checking', 0.00),
-    (500, 2003, '2021-05-11 20:20:12', 'Saving', 0.00);
+    (1, 2000, '2007-01-01 10:11:00', 'Checking', '100.00', 1),
+    (2, 2000, '2009-03-11 20:02:00', 'Savings', '200.00', 1),
+    (3, 2001, '2020-02-20 01:40:00', 'Checking', '400.00', 1);
 
 DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
@@ -49,9 +48,9 @@ CREATE TABLE `transactions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 INSERT INTO `transactions` VALUES
-    (1, 100, -1000, 'Withdrawal', '2020-04-27 11:23:00'),
-    (2, 400, 1000, 'Deposit', '2021-10-20 13:03:01'),
-    (3, 200, -1000, 'Withdrawal', '2019-03-21 15:22:11'),
-    (4, 200, 300, 'Deposit', '2021-04-27 12:57:10'),
-    (5, 300, -1000, 'Withdrawal', '2020-04-22 11:13:20'),
-    (6, 500, 1000, 'Deposit', '2020-03-20 15:25:34');
+    (1, 1, -1000, 'Withdrawal', '2020-04-27 11:23:00'),
+    (2, 2, 1000, 'Deposit', '2021-10-20 13:03:01'),
+    (3, 2, -1000, 'Withdrawal', '2019-03-21 15:22:11'),
+    (4, 2, 300, 'Deposit', '2021-04-27 12:57:10'),
+    (5, 3, -1000, 'Withdrawal', '2020-04-22 11:13:20'),
+    (6, 3, 1000, 'Deposit', '2020-03-20 15:25:34');

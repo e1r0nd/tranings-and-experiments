@@ -73,11 +73,6 @@ func writeResponse(w http.ResponseWriter, contentType string, code int, message 
 	}
 }
 
-func getCustomer(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	fmt.Fprintf(w, vars["customer_id"])
-}
-
 func createCustomer(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Post request received")
 }
