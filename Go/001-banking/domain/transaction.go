@@ -5,18 +5,18 @@ import "github.com/e1r0nd/banking/dto"
 const WITHDRAWAL = "withdrawal"
 
 type Transaction struct {
-	TransactionId   int64   `json:"transaction_id"`
-	AccountId       int64   `json:"account_id"`
-	Amount          float64 `json:"amount"`
-	TransactionType string  `json:"transaction_type"`
-	TransactionDate string  `json:"transaction_date"`
+	TransactionId   string  `db:"transaction_id"`
+	AccountId       string  `db:"account_id"`
+	Amount          float64 `db:"amount"`
+	TransactionType string  `db:"transaction_type"`
+	TransactionDate string  `db:"transaction_date"`
 }
 
 func (t Transaction) IsWithdrawal() bool {
 	return t.TransactionType == WITHDRAWAL
 }
 
-func (t Transaction) ToDto() dto.TransactionRequest {
+func (t Transaction) ToDto() dto.TransactionResponse {
 	return dto.TransactionResponse{
 		TransactionId:   t.TransactionId,
 		AccountId:       t.AccountId,

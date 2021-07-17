@@ -5,25 +5,38 @@ import (
 	errs "github.com/e1r0nd/banking/errs"
 )
 
+const dbTSLayout = "2006-01-02 15:04:05"
+
 type Account struct {
-	AccountId   string  `json:"account_id"`
-	CustomerId  string  `json:"customer_id"`
-	OpeningDate string  `json:"opening_date"`
-	AccountType string  `json:"account_type"`
-	Amount      float64 `json:"amount"`
-	Status      string  `json:"status"`
+	AccountId   string  `db:"account_id"`
+	CustomerId  string  `db:"customer_id"`
+	OpeningDate string  `db:"opening_date"`
+	AccountType string  `db:"account_type"`
+	Amount      float64 `db:"amount"`
+	Status      string  `db:"status"`
 }
 
+func (a Account) ToNewAccountResponseDto() *dto.NewAccountResponse {
+	return &dto.NewAccountResponse{a.AccountId}
+}
+
+//go:generate mockgen -destination=../mocks/domain/mockAccountRepository.go -package=domain github.com/ashishjuyal/banking/domain AccountRepository
 type AccountRepository interface {
-	Save(Account) (*Account, *errs.AppError)
-	SaveTransaction(Transaction Transaction) (*Transaction, *errs.AppError)
-	FindById(accountId string) (*Account, *errs.AppError)
-}
-
-func (a Account) ToNewAccountResponseDto() dto.NewAccountResponse {
-	return dto.NewAccountResponse{a.AccountId}
+	Save(account Account) (*Account, *errs.AppError)
+	SaveTransaction(transaction Transaction) (*Transaction, *errs.AppError)
+	FindBy(accountId string) (*Account, *errs.AppError)
 }
 
 func (a Account) CanWithdraw(amount float64) bool {
 	return a.Amount >= amount
+}
+
+func NewAccount(customerId, accountType string, amount float64) Account {
+	return Account{
+		CustomerId:  customerId,
+		OpeningDate: dbTSLayout,
+		AccountType: accountType,
+		Amount:      amount,
+		Status:      "1",
+	}
 }

@@ -32,9 +32,10 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 INSERT INTO `accounts` VALUES
-    (1, 2000, '2007-01-01 10:11:00', 'Checking', '100.00', 1),
-    (2, 2000, '2009-03-11 20:02:00', 'Savings', '200.00', 1),
-    (3, 2001, '2020-02-20 01:40:00', 'Checking', '400.00', 1);
+	(95470,2000,'2020-08-22 10:20:06', 'saving', 6823.23, 1),
+	(95471,2002,'2020-08-09 10:27:22', 'checking', 3342.96, 1),
+    (95472,2001,'2020-08-09 10:35:22', 'saving', 7000, 1),
+    (95473,2001,'2020-08-09 10:38:22', 'saving', 5861.86, 1);
 
 DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
@@ -54,3 +55,27 @@ INSERT INTO `transactions` VALUES
     (4, 2, 300, 'Deposit', '2021-04-27 12:57:10'),
     (5, 3, -1000, 'Withdrawal', '2020-04-22 11:13:20'),
     (6, 3, 1000, 'Deposit', '2020-03-20 15:25:34');
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `role` varchar(20) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `users` VALUES
+  ('admin','abc123','admin', NULL, '2020-08-09 10:27:22'),
+  ('2001','abc123','user', 2001, '2020-08-09 10:27:22'),
+  ('2000','abc123','user', 2000, '2020-08-09 10:27:22');
+
+DROP TABLE IF EXISTS `refresh_token_store`;
+
+CREATE TABLE `refresh_token_store` (
+    `refresh_token` varchar(300) NOT NULL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`refresh_token`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
